@@ -5,45 +5,46 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/05 22:01:25 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/01/06 08:42:30 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/01/11 18:20:35 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/01/11 18:48:19 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-char	*number_string(char *str, int n, int counter);
+static int	int_str_len(int n);
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
-	char	*str;
-	int		x;
-	int		y;
+	int		c;
+	size_t	l;
+	char	*fr;
 
-	x = n;
-	y = 0;
-	while (n > 1)
+	l = int_str_len(n);
+	c = n;
+	if (c < 0)
 	{
-		n = n / 10;
-		y++;
+		c = c * -1;
+		l++;
 	}
-	str = malloc(y + 1);
-	y = 0;
-	return (number_string(str, n, y));
+	fr = ft_strnew(l);
+	fr[l] = c % 10 + '0';
+	while (c /= 10)
+		c = c / 10;
+		fr[l] = c % 10 + '0';
+	if (n < 0)
+		fr[0] = '-';
+	return (fr);
 }
 
-char	*number_string(char *str, int n, int counter)
+static int	int_str_len(int n)
 {
-	if (n < 10)
-	{
-		str[counter] = n;
-		counter++;
-	}
-	if (n > 10)
-	{
-		n = n / 10;
-		number_string(str, n, counter);
-	}
-	str[counter] = '\0';
-	return (str);
+	int	c;
+
+	c = 0;
+	while (n /= 10)
+		c++;
+	return (c);
 }
+
+int	main
