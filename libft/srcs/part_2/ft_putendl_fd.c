@@ -16,6 +16,8 @@ void	ft_putendl_fd(char const *s, int fd)
 {
 	int	x;
 
+	if (!s || !fd)
+		return ;
 	x = 0;
 	while (s[x] != 0)
 	{

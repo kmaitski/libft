@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putbr_fd.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/06 09:12:01 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/01/06 09:41:59 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/01/06 08:24:26 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/01/06 08:55:10 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putnbr(int n)
 {
 	if (n == -2147483648)
 	{
-		ft_putchar_fd('-', fd);
-		ft_putchar_fd(2, fd);
+		ft_putchar('-');
+		ft_putchar('2');
+		n = 147483648;
 	}
 	if (n < 0)
 	{
-		ft_putchar_fd('-', fd);
+		ft_putchar ('-');
 		n = n * -1;
 	}
 	if (n < 10)
-		ft_putchar_fd(n, fd);
-	if (n > 9)
 	{
-		n = n / 10;
-		ft_putnbr_fd(n, fd);
+		ft_putchar(n + '0');
+		return ;
 	}
+	ft_putnbr(n / 10);
+	ft_putchar((n % 10) + '0');
 }

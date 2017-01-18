@@ -1,6 +1,6 @@
 NAME = libft.a
 
-SRC = srcs/*.c
+SRC = srcs/part_2/*.c srcs/part_1/*.c
 
 OFILES = *.o
 

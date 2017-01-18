@@ -82,4 +82,12 @@ static void	populate_string(char const *s, char *dest, char c)
 		dest[x] = s[x];
 		x++;
 	}
+	printf("%s", dest);
+}
+
+int	main(void)
+{
+	char *s = "      split       this for   me  !       ";
+	ft_strsplit(s, ' ');
+	return (0);
 }

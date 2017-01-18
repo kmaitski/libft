@@ -1,50 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_putbr_fd.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/11 18:20:35 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/01/11 18:48:19 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/01/06 09:12:01 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/01/06 09:41:59 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	int_str_len(int n);
-
-char		*ft_itoa(int n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int		c;
-	size_t	l;
-	char	*fr;
-
-	l = int_str_len(n);
-	c = n;
-	if (c < 0)
+	if (n == -2147483648)
 	{
-		c = c * -1;
-		l++;
+		ft_putchar_fd('-', fd);
+		ft_putchar_fd(2 + '0', fd);
+		n = 147483648;
 	}
-	fr = ft_strnew(l);
-	fr[l] = c % 10 + '0';
-	while (c /= 10)
-		c = c / 10;
-		fr[l] = c % 10 + '0';
 	if (n < 0)
-		fr[0] = '-';
-	return (fr);
+	{
+		ft_putchar_fd('-', fd);
+		n = n * -1;
+	}
+	if (n < 10)
+	{
+		ft_putchar_fd(n + '0', fd);
+		return ;
+	}
+	ft_putnbr_fd(n / 10, fd);
+	ft_putchar_fd((n % 10) + '0', fd);
 }
-
-static int	int_str_len(int n)
-{
-	int	c;
-
-	c = 0;
-	while (n /= 10)
-		c++;
-	return (c);
-}
-
-int	main
