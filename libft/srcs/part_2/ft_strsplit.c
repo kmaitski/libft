@@ -10,21 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
-static void	populate_2d(char const *s, char **arr, char c);
-static void	populate_string(char const *s, char *dest, char c);
+static char	**populate_2d(char const *s, char **arr, char c);
 static int	word_count(char const *s, char c);
+static int	word_length(char const *s, char c);
 
 char		**ft_strsplit(char const *s, char c)
 {
-	int		x;
+	int	x;
 	char	**fresh;
 
 	if (!s || !c)
 		return (NULL);
 	x = word_count(s, c);
-	fresh = (char **)malloc(x * sizeof(char *) + 1);
+	fresh = (char **)malloc((x) * sizeof(char *) + 1);
 	if (!fresh)
 		return (NULL);
 	populate_2d(s, fresh, c);
@@ -47,10 +47,10 @@ static int	word_count(char const *s, char c)
 	return (w);
 }
 
-static void	populate_2d(char const *s, char **arr, char c)
+static char	**populate_2d(char const *s, char **arr, char c)
 {
 	int		x;
-	size_t	l;
+	size_t		l;
 	int		w;
 
 	x = 0;
@@ -64,25 +64,25 @@ static void	populate_2d(char const *s, char **arr, char c)
 			l = 0;
 			while (s[x + l] != c)
 				l++;
-			arr[w] = ft_strnew(l + 1);
-			populate_string(&s[x], arr[w], c);
+			arr[w] = ft_strsub(&s[x], 0, word_length(&s[x], c));
+			if (arr[w] == NULL)
+				return (NULL);
 			x = x + l;
 			w++;
 		}
 	}
+	arr[w] = NULL;
+	return (arr);
 }
 
-static void	populate_string(char const *s, char *dest, char c)
+static int	word_length(char const *s, char c)
 {
 	int	x;
 
 	x = 0;
-	while (s[x] != c)
-	{
-		dest[x] = s[x];
+	while (s[x] != '\0' && s[x] != c)
 		x++;
-	}
-	printf("%s", dest);
+	return (x);
 }
 
 int	main(void)

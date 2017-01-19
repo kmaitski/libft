@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "../../includes/libft.h"
 
 void	*ft_memalloc(size_t size)
 {
@@ -19,6 +19,6 @@ void	*ft_memalloc(size_t size)
 	fresh = malloc(size);
 	if (fresh == NULL)
 		return (NULL);
-	memset(fresh, 0, size);
+	ft_memset(fresh, 0, size);
 	return (fresh);
 }
