@@ -6,11 +6,11 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 18:20:35 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/01/11 18:48:19 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/01/20 10:52:20 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 static int	int_str_len(int n);
 

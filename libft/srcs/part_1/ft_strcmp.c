@@ -6,9 +6,11 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 10:01:23 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/01/05 10:35:39 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/01/20 11:57:05 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../../includes/libft.h"
 
 int	ft_strcmp(char *s1, char *s2)
 {

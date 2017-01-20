@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 15:54:57 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/01/11 16:57:27 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/01/20 11:47:07 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,11 +83,4 @@ static int	word_length(char const *s, char c)
 	while (s[x] != '\0' && s[x] != c)
 		x++;
 	return (x);
-}
-
-int	main(void)
-{
-	char *s = "      split       this for   me  !       ";
-	ft_strsplit(s, ' ');
-	return (0);
 }

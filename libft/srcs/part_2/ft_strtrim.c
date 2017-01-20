@@ -6,11 +6,11 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/06 18:19:36 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/01/06 18:53:10 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/01/20 11:47:57 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
 static	size_t	count_before(char const *s)
 {

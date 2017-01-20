@@ -6,11 +6,11 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 18:27:54 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/01/06 14:55:26 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/01/20 11:47:32 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "../../includes/libft.h"
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {

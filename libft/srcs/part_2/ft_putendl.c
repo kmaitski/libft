@@ -6,11 +6,11 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/06 08:03:02 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/01/06 08:24:05 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/01/20 10:54:27 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "../../includes/libft.h"
 
 void	ft_putendl(char const *s)
 {
