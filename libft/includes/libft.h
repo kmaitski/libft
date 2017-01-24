@@ -49,5 +49,17 @@ size_t		ft_strlcat(char *dest, const char *src, size_t n);
 char		*ft_strchr(const char *str, int c);
 char		*ft_strstr(char *haystack, const char *needle);
 int		ft_strncmp(const char *str1, const char *str2, size_t n);
+int		ft_atoi(const char *str);
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
+
+
+
+
 
 #endif
