@@ -11,3 +11,35 @@
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+
+char	*ft_strrchr(char *str, int c)
+{
+	int		f;
+	int		co;
+	char	*s;
+
+	f = 0;
+	co = 0;
+	while (str[co] != '\0')
+	{
+		if (str[co] == c)
+		{
+			s = &str[co];
+			f = 1;
+			while (str[co] != '\0')
+			{
+				if (str[co] == c)
+				{ 
+					s = &str[co];
+					break ;
+				}
+				co++;
+			}
+		}
+		co++;
+	}
+	if (f == 1)
+		return (s);
+	s = NULL;
+	return (s);
+}
