@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/20 11:53:22 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/01/20 11:53:31 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/01/27 11:36:15 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ const void	*ft_memchr(const void *str, int c, size_t n)
 	if (f == 1)
 		ne = &str[co];
 	else
-		ne = str;
+		ne = NULL;
 	return (ne);
 }
