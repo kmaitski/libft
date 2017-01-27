@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 15:54:57 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/01/26 17:13:19 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/01/26 19:21:47 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	word_count(char const *s, char c)
 	w = 0;
 	while (s[x] != '\0')
 	{
-		if (s[x] != c && s[x + 1] == c)
+		if ((s[x] != c && s[x + 1] == c) || (s[x + 1] == '\0' && s[x] != c))
 			w++;
 		x++;
 	}
@@ -52,10 +52,8 @@ static char	**populate_2d(char const *s, char **arr, char c)
 			x++;
 		else
 		{
-			l = 0;
-			while (s[x + l] != c)
-				l++;
-			arr[w] = ft_strsub(&s[x], 0, word_length(&s[x], c));
+			l = word_length(&s[x], c);
+			arr[w] = ft_strsub(s, x, l);
 			if (arr[w] == NULL)
 				return (NULL);
 			x = x + l;

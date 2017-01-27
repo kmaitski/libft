@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/06 18:19:36 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/01/26 17:54:07 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/01/26 18:48:11 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,31 +43,25 @@ char			*ft_strtrim(char const *s)
 	size_t		length;
 	char		*copy;
 	size_t		x;
-	size_t		counter;
-	size_t		y;
+	size_t		z;
 
 	if (!s)
 		return (NULL);
 	x = count_before(s);
-	y = count_after(s);
-	counter = 0;
-	length = ft_strlen(s) - x - y;
-	printf("%zu", length);
+	z = ft_strlen(s);
+	if ((x + count_after(s)) >= z)
+		length = 0;
+	else
+		length = ft_strlen(s) - x - count_after(s);
 	copy = ft_strnew(length);
 	if (!copy)
 		return (NULL);
-	while (counter < length && length > 0)
+	z = 0;
+	while (z < length)
 	{
-		copy[counter] = s[x];
+		copy[z] = s[x];
 		x++;
-		counter++;
+		z++;
 	}
 	return (copy);
-}
-
-int	main(void)
-{
-	char *s1 = "  \t \t \n   \n\n\n\t";
-	ft_strtrim(s1);
-	return (0);
 }
