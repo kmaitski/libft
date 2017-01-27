@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/06 18:19:36 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/01/20 11:47:57 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/01/26 17:54:07 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static	size_t	count_before(char const *s)
 
 static	size_t	count_after(char const *s)
 {
-	int	length;
+	int		length;
 	size_t	x;
 
 	x = 0;
@@ -52,14 +52,22 @@ char			*ft_strtrim(char const *s)
 	y = count_after(s);
 	counter = 0;
 	length = ft_strlen(s) - x - y;
+	printf("%zu", length);
 	copy = ft_strnew(length);
 	if (!copy)
 		return (NULL);
-	while (counter < length  && length > 0)
+	while (counter < length && length > 0)
 	{
 		copy[counter] = s[x];
 		x++;
 		counter++;
 	}
 	return (copy);
+}
+
+int	main(void)
+{
+	char *s1 = "  \t \t \n   \n\n\n\t";
+	ft_strtrim(s1);
+	return (0);
 }

@@ -6,13 +6,21 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 18:20:35 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/01/20 10:52:20 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/01/26 17:05:19 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-static int	int_str_len(int n);
+static	int	int_str_len(int n)
+{
+	int	c;
+
+	c = 1;
+	while (n /= 10)
+		c++;
+	return (c);
+}
 
 char		*ft_itoa(int n)
 {
@@ -40,14 +48,4 @@ char		*ft_itoa(int n)
 	if (n < 0)
 		fr[0] = '-';
 	return (fr);
-}
-
-static int	int_str_len(int n)
-{
-	int	c;
-
-	c = 1;
-	while (n /= 10)
-		c++;
-	return (c);
 }

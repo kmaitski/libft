@@ -6,30 +6,11 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 15:54:57 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/01/20 11:47:07 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/01/26 17:13:19 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
-
-static char	**populate_2d(char const *s, char **arr, char c);
-static int	word_count(char const *s, char c);
-static int	word_length(char const *s, char c);
-
-char		**ft_strsplit(char const *s, char c)
-{
-	int	x;
-	char	**fresh;
-
-	if (!s || !c)
-		return (NULL);
-	x = word_count(s, c);
-	fresh = (char **)malloc((x) * sizeof(char *) + 1);
-	if (!fresh)
-		return (NULL);
-	populate_2d(s, fresh, c);
-	return (fresh);
-}
 
 static int	word_count(char const *s, char c)
 {
@@ -47,10 +28,20 @@ static int	word_count(char const *s, char c)
 	return (w);
 }
 
+static int	word_length(char const *s, char c)
+{
+	int	x;
+
+	x = 0;
+	while (s[x] != '\0' && s[x] != c)
+		x++;
+	return (x);
+}
+
 static char	**populate_2d(char const *s, char **arr, char c)
 {
 	int		x;
-	size_t		l;
+	size_t	l;
 	int		w;
 
 	x = 0;
@@ -75,12 +66,17 @@ static char	**populate_2d(char const *s, char **arr, char c)
 	return (arr);
 }
 
-static int	word_length(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
-	int	x;
+	int		x;
+	char	**fresh;
 
-	x = 0;
-	while (s[x] != '\0' && s[x] != c)
-		x++;
-	return (x);
+	if (!s || !c)
+		return (NULL);
+	x = word_count(s, c);
+	fresh = (char **)malloc((x) * sizeof(char *) + 1);
+	if (!fresh)
+		return (NULL);
+	populate_2d(s, fresh, c);
+	return (fresh);
 }

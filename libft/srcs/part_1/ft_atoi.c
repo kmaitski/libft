@@ -4,15 +4,23 @@ int	ft_atoi(const char *str)
 {
 	int	c;
 	int	a;
+	int	n;
 
 	c = 0;
 	a = 0;
-	while (str[c] < '0' || str[c] > '9')
+	n = 1;
+	while ((str[c] < '0' && str[c] != '-') || (str[c] > '9' && str[c] != '-'))
 		c++;
-	while (str[c] >= '0' && str[c] <= '9')
+	if (str[c] == '-')
 	{
-		a = a * 10 + str[c] + '0';
+		n = -1;
 		c++;
 	}
-	return (a);
+	while (str[c] >= '0' && str[c] <= '9')
+	{
+		a = a * 10 + str[c] - '0';
+		c++;
+	}
+	a = a * n;
+	return (a * n);
 }
