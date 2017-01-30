@@ -6,15 +6,15 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 	size_t	x;
 
 	c = 0;
-	x = 0;
 	while (dest[c] != '\0' && c < n)
 		c++;
-	while (src[x] != '\0' && x < n)
+	x = c;
+	while (src[c-x] != '\0' && c < n - 1)
 	{
-		dest[c] = src[x];
-		x++;
+		dest[c] = src[c-x];
 		c++;
 	}
-	dest[c] = '\0';
-	return (ft_strlen(dest));
+	if (x < n)
+		dest[c] = '\0';
+	return (x + ft_strlen(src));
 }

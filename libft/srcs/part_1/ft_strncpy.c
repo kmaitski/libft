@@ -5,7 +5,7 @@ char	*ft_strncpy(char *dest, const char *src, size_t n)
 	size_t	c;
 
 	c = 0;
-	while (c < n && src[c] != '\0')
+	while (src[c] != '\0' && c < n)
 	{
 		dest[c] = src[c];
 		c++;
@@ -16,6 +16,5 @@ char	*ft_strncpy(char *dest, const char *src, size_t n)
 		dest[c] = '\0';
 		c++;
 	}
-	dest[c] = '\0';
 	return (dest);
 }
