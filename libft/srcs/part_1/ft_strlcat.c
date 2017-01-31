@@ -6,6 +6,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 	size_t	x;
 
 	c = 0;
+	if (n == 0)
+		return (ft_strlen(dest));
 	while (dest[c] != '\0' && c < n)
 		c++;
 	x = c;

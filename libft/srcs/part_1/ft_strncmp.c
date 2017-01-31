@@ -8,8 +8,8 @@ int	ft_strncmp(const char *str1, const char *str2, size_t n)
 	while (str1[c] !='\0' && str2[c] != '\0' && c < n)
 	{
 		if (str1[c] != str2[c])
-			return (str1[c] - str2[c]);
+			return ((unsigned char)str1[c] - (unsigned char)str2[c]);
 		c++;
 	}
-	return (str1[c] - str2[c]);
+	return ((unsigned char)str1[c] - (unsigned char)str2[c]);
 }
