@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void		ft_putchar(char c);
+void		ft_putchar(int c);
 void		ft_putstr(char const *s);
 int		ft_strlen(char const *str);
 int		ft_strcmp(const char *s1, const char *s2);
