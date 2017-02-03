@@ -1,6 +1,6 @@
 NAME = libft.a
 
-SRC = srcs/part_2/*.c srcs/part_1/*.c
+SRC = *.c
 
 OFILES = *.o
 
@@ -10,7 +10,6 @@ $(NAME):
 	gcc -c -Wall -Wextra -Werror $(SRC) -Iincludes
 	ar rc $(NAME) $(OFILES)
 	ranlib $(NAME)
-	rm -f $(OFILES)
 
 clean:
 	rm -f $(OFILES)
