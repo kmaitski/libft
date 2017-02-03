@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 16:41:00 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/02/02 19:47:29 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/02/03 13:17:16 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_itoa(int n);
 void				ft_putnbr(int n);
+void				ft_putendl(char const *s);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
@@ -56,8 +57,9 @@ void				*ft_memcpy(void *str1, const void *str2, size_t n);
 void				*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void				*ft_memmove(void *str1, const void *str2, size_t n);
 const void			*ft_memchr(const void *str, int c, size_t n);
-int					ft_memcp(const void *str1, const void *str2, size_t n);
+int					ft_memcmp(const void *str1, const void *str2, size_t n);
 char				*ft_strdup(const char *s);
+char				*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char				*ft_strcpy(char *dest, const char *src);
 char				*ft_strncpy(char *dest, const char *src, size_t n);
 char				*ft_strrchr(const char *str, int c);

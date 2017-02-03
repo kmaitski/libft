@@ -6,11 +6,12 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 18:27:54 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/02/02 15:32:55 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/02/03 13:47:28 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+# include <stdio.h>
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
@@ -31,4 +32,11 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	}
 	new[x] = '\0';
 	return (new);
+}
+
+int	main(void)
+{
+	static char	*str = "Un jour je serai, le meilleur dresseur !";
+	printf("%d", strcmp(ft_strsub(str, 0, 0), ""));
+	return (0);
 }
