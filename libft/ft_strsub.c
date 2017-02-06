@@ -11,14 +11,13 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-# include <stdio.h>
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char	*new;
 	size_t	x;
 
-	if (!s || (!start && !len))
+	if (!s)
 		return (NULL);
 	new = malloc(len + 1);
 	if (new == NULL)
@@ -32,11 +31,4 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	}
 	new[x] = '\0';
 	return (new);
-}
-
-int	main(void)
-{
-	static char	*str = "Un jour je serai, le meilleur dresseur !";
-	printf("%d", strcmp(ft_strsub(str, 0, 0), ""));
-	return (0);
 }
