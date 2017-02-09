@@ -14,20 +14,17 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t		c;
 	char		*des;
 	const char	*sr;
 
-	c = 0;
 	des = dest;
 	sr = src;
-	if (sr < des)
+	if (n < ft_strlen(src))
 	{
 		while (n--)
 			des[n] = sr[n];
 	}
 	else
 		ft_memcpy(des, sr, n);
-	dest = des;
-	return (dest);
+	return (des);
 }

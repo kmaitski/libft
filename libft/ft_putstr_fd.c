@@ -14,14 +14,11 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	int	x;
-
 	if (!s || !fd)
 		return ;
-	x = 0;
-	while (s[x] != '\0')
+	while (*s != '\0')
 	{
-		ft_putchar_fd(s[x], fd);
-		x++;
+		ft_putchar_fd(*s, fd);
+		s++;
 	}
 }

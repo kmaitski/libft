@@ -14,14 +14,11 @@
 
 void	ft_strclr(char *s)
 {
-	int	x;
-
-	x = 0;
 	if (s == NULL)
 		return ;
-	while (s[x] != '\0')
+	while (*s != '\0')
 	{
-		s[x] = '\0';
-		x++;
+		*s = '\0';
+		s++;
 	}
 }

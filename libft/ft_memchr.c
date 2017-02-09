@@ -14,25 +14,16 @@
 
 const void	*ft_memchr(const void *str, int c, size_t n)
 {
-	size_t		co;
 	char const	*ne;
-	int			f;
 
-	co = 0;
-	f = 0;
 	ne = str;
-	while (co < n)
+	while (n--)
 	{
-		if (ne[co] == (signed char)c)
+		if (*ne == (signed char)c)
 		{
-			f = 1;
-			break ;
+			return (ne);
 		}
-		co++;
+		ne++;
 	}
-	if (f == 1)
-		ne = &str[co];
-	else
-		ne = NULL;
-	return (ne);
+	return (NULL);
 }

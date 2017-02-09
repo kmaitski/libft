@@ -16,8 +16,7 @@ void	*ft_memalloc(size_t size)
 {
 	void	*fresh;
 
-	fresh = malloc(size);
-	if (fresh == NULL)
+	if (!(fresh = malloc(size)))
 		return (NULL);
 	ft_memset(fresh, 0, size);
 	return (fresh);

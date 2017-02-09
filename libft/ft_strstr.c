@@ -12,12 +12,13 @@
 
 #include "libft.h"
 
-static int	is_needle_in_haystack(const char *haystack,
-		const char *needle, int l)
+static int	is_needle_in_haystack(const char *haystack, const char *needle)
 {
 	int	c;
+	int	l;
 
 	c = 0;
+	l = ft_strlen(needle);
 	while (needle[c] != '\0' && haystack[c] == needle[c])
 		c++;
 	if (c == l)
@@ -27,21 +28,16 @@ static int	is_needle_in_haystack(const char *haystack,
 
 char		*ft_strstr(const char *haystack, const char *needle)
 {
-	int	l;
-	int	c;
-
-	l = ft_strlen(needle);
-	c = 0;
-	if (needle[0] == '\0' || haystack == needle)
+	if (*needle == '\0' || haystack == needle)
 		return ((char *)haystack);
-	while (haystack[c] != '\0')
+	while (*haystack != '\0')
 	{
-		if (haystack[c] == needle[0])
+		if (*haystack == *needle)
 		{
-			if (is_needle_in_haystack(&haystack[c], needle, l) == 1)
-				return ((char *)&haystack[c]);
+			if (is_needle_in_haystack(haystack, needle) == 1)
+				return ((char*)haystack);
 		}
-		c++;
+		haystack++;
 	}
 	return (NULL);
 }

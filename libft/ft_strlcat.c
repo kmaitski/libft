@@ -28,7 +28,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 		dest[c] = src[c - x];
 		c++;
 	}
-	if (x < n)
+	if (c < n)
 		dest[c] = '\0';
 	return (x + ft_strlen(src));
 }

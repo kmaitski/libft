@@ -17,7 +17,7 @@ void	ft_putnbr_fd(int n, int fd)
 	if (n == -2147483648)
 	{
 		ft_putchar_fd('-', fd);
-		ft_putchar_fd(2 + '0', fd);
+		ft_putchar_fd('2', fd);
 		n = 147483648;
 	}
 	if (n < 0)

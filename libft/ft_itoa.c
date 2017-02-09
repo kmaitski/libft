@@ -26,29 +26,25 @@ static	int	int_str_len(int n)
 
 char		*ft_itoa(int n)
 {
-	int		c;
 	size_t	l;
 	char	*fr;
 
 	l = int_str_len(n);
-	c = n;
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	if (c < 0)
-	{
-		c = c * -1;
-	}
-	fr = ft_strnew(l);
-	if (!fr)
+	if (!(fr = ft_strnew(l)))
 		return (NULL);
+	if (n < 0)
+	{
+		fr[0] = '-';
+		n = n * -1;
+	}
 	l--;
-	fr[l] = c % 10 + '0';
-	while (c /= 10)
+	fr[l] = n % 10 + '0';
+	while (n /= 10)
 	{
 		l--;
-		fr[l] = c % 10 + '0';
+		fr[l] = n % 10 + '0';
 	}
-	if (n < 0)
-		fr[0] = '-';
 	return (fr);
 }

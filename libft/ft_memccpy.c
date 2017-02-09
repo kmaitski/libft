@@ -23,7 +23,6 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	s = (char *)src;
 	if (dest == src)
 		return (dest);
-	co = 0;
 	while (co < n)
 	{
 		d[co] = s[co];
