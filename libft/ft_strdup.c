@@ -15,7 +15,7 @@
 char	*ft_strdup(const char *s)
 {
 	char	*n;
-	int		c;
+	int	c;
 
 	if(!(n = ft_strnew(ft_strlen(s))))
 		return (NULL);
