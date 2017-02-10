@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstaddn.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/20 11:55:19 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/02/09 15:45:01 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/02/09 17:32:55 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/02/09 17:39:40 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	ft_lstaddn(t_list *begin, t_list *new, void *c)
 {
-	void	*o;
+	t_list	*t;
+	t_list	*s;
 
-	if (!(o = ft_strnew(n)))
-		return (NULL);
-	ft_memcpy(o, src, n);
-	ft_memcpy(dest, o, n);
-	free(o);
-	return (dest);
+	t = begin;
+	while (t != NULL && t->content != c)
+		t = t->next;
+	if (t->content == c)
+	{
+		s = t->next;
+		t->next = new;
+		new->next = s;
+	}
 }

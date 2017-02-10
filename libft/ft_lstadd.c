@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 17:45:05 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/02/02 18:09:05 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/02/09 16:16:59 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,12 @@ void	ft_lstadd(t_list **alst, t_list *new)
 	t_list	*tmp;
 
 	tmp = *alst;
-	if (*alst)
+	if (*alst == NULL)
+	{
+		*alst = new;
+		new->next = NULL;
+	}
+	else
 	{
 		*alst = new;
 		new->next = tmp;

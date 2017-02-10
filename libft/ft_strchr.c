@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 13:36:41 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/02/02 15:13:33 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/02/09 13:54:15 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-
 	while (*str != '\0' && *str != c)
 		str++;
 	if (*str == c)

@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstn.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/20 11:55:19 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/02/09 15:45:01 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/02/09 17:03:24 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/02/09 17:40:10 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+t_list	*ft_lstn(t_list *begin, size_t n)
 {
-	void	*o;
+	size_t	c;
+	t_list	*t;
 
-	if (!(o = ft_strnew(n)))
-		return (NULL);
-	ft_memcpy(o, src, n);
-	ft_memcpy(dest, o, n);
-	free(o);
-	return (dest);
+	c = 1;
+	t = begin;
+	while (c < n)
+	{
+		t = t->next;
+		c++;
+	}
+	return (t);
 }

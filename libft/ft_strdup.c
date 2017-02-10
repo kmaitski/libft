@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 13:17:39 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/02/02 15:03:04 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/02/09 14:02:15 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 char	*ft_strdup(const char *s)
 {
 	char	*n;
-	int	c;
+	int		c;
 
-	if(!(n = ft_strnew(ft_strlen(s))))
+	if (!(n = ft_strnew(ft_strlen(s))))
 		return (NULL);
 	c = 0;
 	while (s[c] != '\0')
