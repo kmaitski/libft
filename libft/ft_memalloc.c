@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 11:00:22 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/02/02 19:58:17 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/02/10 11:51:57 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memalloc(size_t size)
 {
 	void	*fresh;
 
-	if (!(fresh = malloc(size)))
+	if (!(fresh = (void *)malloc(size)))
 		return (NULL);
 	ft_memset(fresh, 0, size);
 	return (fresh);

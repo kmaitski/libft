@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/06 18:19:36 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/02/02 15:34:37 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/02/09 19:57:27 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,15 @@ static	size_t	count_after(char const *s)
 
 	x = 0;
 	length = ft_strlen(s);
-	length--;
-	while (s[length] == ' ' || s[length] == '\n' || s[length] == '\t')
+	if (length > 0)
 	{
 		length--;
-		x++;
+		while ((s[length] == ' ' || s[length] == '\n' || s[length] == '\t')
+				&& length > 0)
+		{
+			length--;
+			x++;
+		}
 	}
 	return (x);
 }
@@ -53,8 +57,7 @@ char			*ft_strtrim(char const *s)
 		length = 0;
 	else
 		length = ft_strlen(s) - x - count_after(s);
-	copy = ft_strnew(length);
-	if (!copy)
+	if (!(copy = ft_strnew(length)))
 		return (NULL);
 	z = 0;
 	while (z < length)

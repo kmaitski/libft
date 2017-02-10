@@ -6,13 +6,13 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 15:54:57 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/02/09 17:17:30 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/02/09 20:10:10 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	word_count(char const *s, char c)
+static size_t	word_count(char const *s, char c)
 {
 	int	x;
 	int	w;
@@ -28,7 +28,7 @@ static int	word_count(char const *s, char c)
 	return (w);
 }
 
-static int	word_length(char const *s, char c)
+static size_t	word_length(char const *s, char c)
 {
 	int	x;
 
@@ -38,11 +38,11 @@ static int	word_length(char const *s, char c)
 	return (x);
 }
 
-static char	**populate_2d(char const *s, char **arr, char c)
+static char		**populate_2d(char const *s, char **arr, char c)
 {
-	int		x;
+	size_t	x;
 	size_t	l;
-	int		w;
+	size_t	w;
 
 	x = 0;
 	w = 0;
@@ -53,8 +53,7 @@ static char	**populate_2d(char const *s, char **arr, char c)
 		else
 		{
 			l = word_length(&s[x], c);
-			arr[w] = ft_strsub(s, x, l);
-			if (arr[w] == NULL)
+			if (!(arr[w] = ft_strsub(s, x, l)))
 				return (NULL);
 			x = x + l;
 			w++;
@@ -64,16 +63,15 @@ static char	**populate_2d(char const *s, char **arr, char c)
 	return (arr);
 }
 
-char		**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
-	int		x;
+	size_t	x;
 	char	**fresh;
 
 	if (!s || !c)
 		return (NULL);
 	x = word_count(s, c);
-	fresh = (char **)malloc((x) * sizeof(char *) + 1);
-	if (!fresh)
+	if (!(fresh = (char **)malloc(sizeof(char*) * (x + 1))))
 		return (NULL);
 	populate_2d(s, fresh, c);
 	return (fresh);
