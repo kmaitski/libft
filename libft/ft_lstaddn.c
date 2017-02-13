@@ -18,7 +18,7 @@ void	ft_lstaddn(t_list *begin, t_list *new, void *c)
 	t_list	*s;
 
 	t = begin;
-	while (t != NULL && t->content != c)
+	while (t && t->content != c)
 		t = t->next;
 	if (t->content == c)
 	{

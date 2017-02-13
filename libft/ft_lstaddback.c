@@ -24,7 +24,7 @@ void	ft_lstaddback(t_list **alst, t_list *new)
 	}
 	else
 	{
-		while (t->next != NULL)
+		while (t->next)
 			t = t->next;
 		t->next = new;
 	}

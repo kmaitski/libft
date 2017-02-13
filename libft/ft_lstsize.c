@@ -19,7 +19,7 @@ size_t	ft_lstsize(t_list *begin)
 
 	c = 0;
 	t = begin;
-	while (t != NULL)
+	while (t)
 	{
 		c++;
 		t = t->next;
