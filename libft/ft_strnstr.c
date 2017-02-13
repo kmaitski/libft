@@ -20,7 +20,7 @@ static int	is_needle_in_haystack(const char *haystack, const char *needle,
 	c = 0;
 	while (needle[c] != '\0' && haystack[c] == needle[c])
 		c++;
-	if (c == l && c < len)
+	if (c == l && c <= len)
 		return (1);
 	return (0);
 }
