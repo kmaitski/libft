@@ -1,4 +1,20 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2017/02/15 10:04:27 by kmaitski          #+#    #+#              #
+#    Updated: 2017/02/18 12:26:54 by kmaitski         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
+
+CFLAGS =-Wall -Wextra -Werror
+
+GCC = gcc -c
 
 SRC = ft_putchar.c ft_putstr.c ft_strlen.c ft_strcmp.c ft_strclr.c ft_memalloc.c ft_memdel.c\
       ft_strnew.c ft_strdel.c ft_striter.c ft_strmap.c ft_striteri.c ft_strmapi.c ft_strequ.c\
@@ -16,7 +32,7 @@ OFILES = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME):
-	gcc -c -Wall -Wextra -Werror $(SRC) -Iincludes
+	$(GCC) $(CFLAGS) $(SRC) -Iincludes
 	ar rc $(NAME) $(OFILES)
 	ranlib $(NAME)
 
@@ -27,3 +43,5 @@ fclean: clean
 		rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: fclean clean re
