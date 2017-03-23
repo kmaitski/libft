@@ -6,40 +6,41 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 13:18:53 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/02/03 13:15:20 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/03/15 21:05:44 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 static int	is_needle_in_haystack(const char *haystack, const char *needle,
-		size_t l, size_t len)
+		size_t needle_length, size_t len)
 {
-	size_t	c;
+	size_t	i;
 
-	c = 0;
-	while (needle[c] != '\0' && haystack[c] == needle[c])
-		c++;
-	if (c == l && c <= len)
+	i = 0;
+	while (needle[i] != '\0' && haystack[i] == needle[i])
+		i++;
+	if (i == needle_length && i <= len)
 		return (1);
 	return (0);
 }
 
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	c;
-	size_t	l;
+	size_t	i;
+	size_t	needle_length;
 
-	c = 0;
-	l = ft_strlen(needle);
+	i = 0;
+	needle_length = ft_strlen(needle);
 	if (needle[0] == '\0' || haystack == needle)
 		return ((char *)haystack);
-	while (haystack[c] != '\0' && c + l <= len)
+	while (haystack[i] != '\0' && i + needle_length <= len)
 	{
-		if (haystack[c] == needle[0])
-			if (is_needle_in_haystack(&haystack[c], needle, l, len) == 1)
-				return ((char *)&haystack[c]);
-		c++;
+		if (haystack[i] == needle[0])
+			if (is_needle_in_haystack(&haystack[i], needle,
+						needle_length, len) == 1)
+				return ((char *)&haystack[i]);
+		i++;
 	}
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 17:57:12 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/02/09 19:15:15 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/03/15 23:08:57 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 int	ft_strequ(char const *s1, char const *s2)
 {
-	int	x;
+	int	i;
 
-	x = 0;
+	i = 0;
 	if (!s1 || !s2)
 		return (0);
-	while (s1[x] == s2[x])
+	while (s1[i] == s2[i])
 	{
-		if (s1[x] == '\0' && s2[x] == '\0')
+		if (s1[i] == '\0' && s2[i] == '\0')
 			return (1);
-		x++;
+		i++;
 	}
 	return (0);
 }

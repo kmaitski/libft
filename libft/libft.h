@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 16:41:00 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/02/18 13:08:45 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/03/15 23:20:04 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,10 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-void				ft_lstaddback(t_list **alst, t_list *new);
-t_list				*ft_lstlast(t_list *begin);
-size_t				ft_lstsize(t_list *begin);
-void				ft_lstaddn(t_list *begin, t_list *new, void *c);
-t_list				*ft_lstn(t_list *begin, size_t n);
+void				ft_lstaddback(t_list **list, t_list *new_node);
+t_list				*ft_lstlast(t_list *head_node);
+size_t				ft_lstsize(t_list *head_node);
+void				ft_lstaddn(t_list **list, t_list *new_node, void *content);
+t_list				*ft_lstn(t_list *head_node, size_t n);
 
 #endif

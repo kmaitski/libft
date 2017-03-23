@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/06 18:19:36 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/02/09 19:57:27 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/03/15 21:03:49 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,57 +14,49 @@
 
 static	size_t	count_before(char const *s)
 {
-	size_t	x;
+	size_t	i;
 
-	x = 0;
-	while (s[x] == ' ' || s[x] == '\n' || s[x] == '\t')
-		x++;
-	return (x);
+	i = 0;
+	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+		i++;
+	return (i);
 }
 
 static	size_t	count_after(char const *s)
 {
 	int		length;
-	size_t	x;
+	size_t	i;
 
-	x = 0;
+	i = 0;
 	length = ft_strlen(s);
-	if (length > 0)
+	length--;
+	while ((s[length] == ' ' || s[length] == '\n' || s[length] == '\t')
+				&& length > 0)
 	{
 		length--;
-		while ((s[length] == ' ' || s[length] == '\n' || s[length] == '\t')
-				&& length > 0)
-		{
-			length--;
-			x++;
-		}
+		i++;
 	}
-	return (x);
+	return (i);
 }
 
 char			*ft_strtrim(char const *s)
 {
 	size_t		length;
 	char		*copy;
-	size_t		x;
-	size_t		z;
+	size_t		spaces_before;
+	size_t		i;
 
 	if (!s)
 		return (NULL);
-	x = count_before(s);
-	z = ft_strlen(s);
-	if ((x + count_after(s)) >= z)
+	spaces_before = count_before(s);
+	if ((spaces_before + count_after(s)) >= ft_strlen(s))
 		length = 0;
 	else
-		length = ft_strlen(s) - x - count_after(s);
+		length = ft_strlen(s) - spaces_before - count_after(s);
 	if (!(copy = ft_strnew(length)))
 		return (NULL);
-	z = 0;
-	while (z < length)
-	{
-		copy[z] = s[x];
-		x++;
-		z++;
-	}
+	i = 0;
+	while (i < length)
+		copy[i++] = s[spaces_before++];
 	return (copy);
 }

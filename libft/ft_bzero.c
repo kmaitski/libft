@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/20 11:52:28 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/02/02 14:52:35 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/03/15 18:34:39 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char	*f;
+	char	*str;
 
-	f = s;
+	str = s;
 	while (n--)
-		*f++ = 0;
+		*str++ = 0;
 }

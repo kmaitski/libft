@@ -5,16 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2017/02/15 10:04:27 by kmaitski          #+#    #+#              #
-#    Updated: 2017/02/18 12:26:54 by kmaitski         ###   ########.fr        #
+#    Created: 2017/03/14 17:38:29 by kmaitski          #+#    #+#              #
+#    Updated: 2017/03/14 17:39:31 by kmaitski         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-
-CFLAGS =-Wall -Wextra -Werror
-
-GCC = gcc -c
 
 SRC = ft_putchar.c ft_putstr.c ft_strlen.c ft_strcmp.c ft_strclr.c ft_memalloc.c ft_memdel.c\
       ft_strnew.c ft_strdel.c ft_striter.c ft_strmap.c ft_striteri.c ft_strmapi.c ft_strequ.c\
@@ -29,18 +25,30 @@ SRC = ft_putchar.c ft_putstr.c ft_strlen.c ft_strcmp.c ft_strclr.c ft_memalloc.c
 
 OFILES = $(SRC:.c=.o)
 
+CC = gcc -c
+
+FLAGS = -Wall -Wextra -Werror
+
+INC = -Iincludes
+
+AR = ar rc
+
+RUN = ranlib
+
+DEL = rm -f
+
 all: $(NAME)
 
 $(NAME):
-	$(GCC) $(CFLAGS) $(SRC) -Iincludes
-	ar rc $(NAME) $(OFILES)
-	ranlib $(NAME)
+	$(CC) $(FLAGS) $(SRC) $(INC)
+	$(AR) $(NAME) $(OFILES)
+	$(RUN) $(NAME)
 
 clean:
-	rm -f $(OFILES)
+	$(DEL) $(OFILES)
 
 fclean: clean
-		rm -f $(NAME)
+		$(DEL) $(NAME)
 
 re: fclean all
 

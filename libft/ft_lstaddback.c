@@ -6,26 +6,28 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 15:57:47 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/02/09 17:02:46 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/03/15 22:18:44 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstaddback(t_list **alst, t_list *new)
+void	ft_lstaddback(t_list **list, t_list *new_node)
 {
-	t_list	*t;
+	t_list	*node;
 
-	t = *alst;
-	if (t == NULL)
+	if (!new_node)
+		exit(1);
+	node = *list;
+	if (!node)
 	{
-		t = new;
-		new->next = NULL;
+		node = new_node;
+		new_node->next = NULL;
 	}
 	else
 	{
-		while (t->next)
-			t = t->next;
-		t->next = new;
+		while (node->next)
+			node = node->next;
+		node->next = new_node;
 	}
 }

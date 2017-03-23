@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 17:45:05 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/02/09 16:16:59 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/03/15 21:35:14 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
-	t_list	*tmp;
+	t_list	*old_head;
 
-	tmp = *alst;
-	if (*alst == NULL)
+	if (!new)
+		return ;
+	old_head = *alst;
+	if (!alst)
 	{
 		*alst = new;
 		new->next = NULL;
@@ -25,6 +27,6 @@ void	ft_lstadd(t_list **alst, t_list *new)
 	else
 	{
 		*alst = new;
-		new->next = tmp;
+		new->next = old_head;
 	}
 }

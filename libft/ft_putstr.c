@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 09:27:11 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/02/09 13:52:35 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/03/15 21:32:51 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_putstr(char const *s)
 {
 	if (!s)
 		return ;
-	while (*s != '\0')
+	while (*s)
 	{
 		ft_putchar(*s);
 		s++;

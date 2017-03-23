@@ -6,23 +6,25 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 16:04:30 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/02/09 17:02:17 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/03/15 22:33:36 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_lstsize(t_list *begin)
+size_t	ft_lstsize(t_list *head_node)
 {
-	size_t	c;
-	t_list	*t;
+	size_t	count;
+	t_list	*node;
 
-	c = 0;
-	t = begin;
-	while (t)
+	if (!head_node)
+		return (0);
+	count = 0;
+	node = head_node;
+	while (node)
 	{
-		c++;
-		t = t->next;
+		count++;
+		node = node->next;
 	}
-	return (c);
+	return (count);
 }
