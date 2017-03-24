@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/06 08:03:02 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/03/15 22:57:35 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/03/23 18:04:50 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@ void	ft_putendl(char const *s)
 	if (!s)
 		return ;
 	while (*s != '\0')
-	{
-		ft_putchar(*s);
-		s++;
-	}
+		ft_putchar(*s++);
 	ft_putchar('\n');
 }

@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/06 09:00:56 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/03/15 22:59:10 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/03/23 18:08:24 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,5 @@ void	ft_putstr_fd(char const *s, int fd)
 	if (!s)
 		return ;
 	while (*s)
-	{
-		ft_putchar_fd(*s, fd);
-		s++;
-	}
+		ft_putchar_fd(*s++, fd);
 }

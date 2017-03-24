@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 17:03:24 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/03/15 18:51:20 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/03/23 17:01:40 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ t_list	*ft_lstn(t_list *head_node, size_t n)
 		return (NULL);
 	count = 1;
 	node = head_node;
-	while (count < n)
-	{
+	while (count++ < n)
 		node = node->next;
-		count++;
-	}
 	return (node);
 }

@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 17:54:03 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/03/15 22:21:41 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/03/23 16:59:15 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstiter(t_list *lst, void (*f)(t_list *elm))
 {
 	t_list	*node;
 
-	if (!f || !lst)
+	if (!f)
 		return ;
 	node = lst;
 	while (node)

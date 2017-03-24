@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 15:57:47 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/03/15 22:18:44 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/03/23 17:55:01 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstaddback(t_list **list, t_list *new_node)
 	t_list	*node;
 
 	if (!new_node)
-		exit(1);
+		return ;
 	node = *list;
 	if (!node)
 	{

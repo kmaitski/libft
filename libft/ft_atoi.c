@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 13:36:13 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/03/22 17:34:13 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/03/23 17:51:13 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,9 @@ int	ft_atoi(const char *str)
 	}
 	if (result == -2147483648)
 		return (-2147483648);
-	if (result < 0 && is_negative)
-		return (-1);
-	if (result < 0 && !is_negative)
+	if (result < 0 && is_negative == -1)
 		return (0);
+	if (result < 0 && is_negative == 1)
+		return (-1);
 	return (result * is_negative);
 }
-//
-//int	main(void)
-//{
-//	ft_atoi("9999999999999999999999999");
-//	return (0);
-//}
