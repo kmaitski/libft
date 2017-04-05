@@ -19,11 +19,8 @@ char	*ft_strnew(size_t size)
 
 	if (!(fresh = (char *)malloc(size + 1)))
 		return (NULL);
-	i = 0;
-	while (i <= size)
-	{
+	i = -1;
+	while (++i <= size)
 		fresh[i] = '\0';
-		i++;
-	}
 	return (fresh);
 }

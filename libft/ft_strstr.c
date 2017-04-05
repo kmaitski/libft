@@ -19,7 +19,7 @@ static int	is_needle_in_haystack(const char *haystack, const char *needle)
 
 	i = 0;
 	needle_len = ft_strlen(needle);
-	while (needle[i] != '\0' && haystack[i] == needle[i])
+	while (needle[i] && haystack[i] == needle[i])
 		i++;
 	if (i == needle_len)
 		return (1);
@@ -28,16 +28,11 @@ static int	is_needle_in_haystack(const char *haystack, const char *needle)
 
 char		*ft_strstr(const char *haystack, const char *needle)
 {
-	if (*needle == '\0' || haystack == needle)
+	if (!*needle || haystack == needle)
 		return ((char *)haystack);
-	while (*haystack != '\0')
-	{
+	while (*haystack++)
 		if (*haystack == *needle)
-		{
 			if (is_needle_in_haystack(haystack, needle) == 1)
 				return ((char*)haystack);
-		}
-		haystack++;
-	}
 	return (NULL);
 }

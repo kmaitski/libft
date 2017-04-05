@@ -19,11 +19,8 @@ char	*ft_strdup(const char *s)
 
 	if (!(new = ft_strnew(ft_strlen(s))))
 		return (NULL);
-	i = 0;
-	while (s[i])
-	{
+	i = -1;
+	while (s[++i])
 		new[i] = s[i];
-		i++;
-	}
 	return (new);
 }

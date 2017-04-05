@@ -14,18 +14,18 @@
 
 int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	size_t	x;
+	size_t	i;
 
-	x = 0;
+	i = 0;
 	if (!s1 || !s2)
 		return (0);
 	if (n == 0)
 		return (1);
-	while (s1[x] == s2[x])
+	while (s1[i] == s2[i])
 	{
-		if ((s1[x] == '\0' && s2[x] == '\0') || x == n - 1)
+		if ((!s1[i] && !s2[i]) || i == n - 1)
 			return (1);
-		x++;
+		i++;
 	}
 	return (0);
 }

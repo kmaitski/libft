@@ -17,14 +17,11 @@ static size_t	word_count(char const *s, char c)
 	int	i;
 	int	j;
 
-	i = 0;
+	i = -1;
 	j = 0;
-	while (s[i] != '\0')
-	{
+	while (s[++i])
 		if ((s[i] != c && s[i + 1] == c) || (s[i + 1] == '\0' && s[i] != c))
 			j++;
-		i++;
-	}
 	return (j);
 }
 
@@ -33,7 +30,7 @@ static size_t	word_length(char const *s, char c)
 	int	i;
 
 	i = 0;
-	while (s[i] != '\0' && s[i] != c)
+	while (s[i] && s[i] != c)
 		i++;
 	return (i);
 }
@@ -46,7 +43,7 @@ static char		**populate_2d(char const *s, char **arr, char c)
 
 	i = 0;
 	j = 0;
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		if (s[i] == c)
 			i++;
@@ -55,7 +52,7 @@ static char		**populate_2d(char const *s, char **arr, char c)
 			word_len = word_length(&s[i], c);
 			if (!(arr[j] = ft_strsub(s, i, word_len)))
 				return (NULL);
-			i = i + word_len;
+			i += word_len;
 			j++;
 		}
 	}
