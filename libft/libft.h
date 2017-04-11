@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 16:41:00 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/03/15 23:20:04 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/11 09:11:12 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,9 @@ t_list				*ft_lstlast(t_list *head_node);
 size_t				ft_lstsize(t_list *head_node);
 void				ft_lstaddn(t_list **list, t_list *new_node, void *content);
 t_list				*ft_lstn(t_list *head_node, size_t n);
+void				ft_swap(int *a, int *b);
+void				ft_aff_a(void);
+void				ft_countdown(void);
+void				ft_print_numbers(void);
 
 #endif
