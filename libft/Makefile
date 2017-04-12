@@ -6,7 +6,7 @@
 #    By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/14 17:38:29 by kmaitski          #+#    #+#              #
-#    Updated: 2017/04/11 09:11:19 by kmaitski         ###   ########.fr        #
+#    Updated: 2017/04/12 10:30:23 by kmaitski         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,9 @@ SRC = ft_putchar.c ft_putstr.c ft_strlen.c ft_strcmp.c ft_strclr.c ft_memalloc.c
       ft_strlcat.c ft_strchr.c ft_strstr.c ft_strncmp.c ft_atoi.c ft_isalpha.c ft_isdigit.c\
       ft_isalnum.c ft_isascii.c ft_isprint.c ft_toupper.c ft_tolower.c ft_lstnew.c\
       ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_lstaddback.c\
-      ft_lstlast.c ft_lstsize.c ft_lstaddn.c ft_lstn.c ft_swap.c ft_aff_a.c ft_countdown.c\
-	  ft_print_numbers.c
+      ft_lstlast.c ft_lstsize.c ft_lstaddn.c ft_lstn.c ft_swap.c ft_rev_print.c\
+	  ft_search_and_replace.c ft_ulstr.c ft_first_word.c ft_last_word.c ft_reverse_bits.c\
+	  ft_swap_bits.c ft_max.c ft_wdmatch.c ft_do_op.c ft_print_bits.c ft_strrev.c
 
 OFILES = $(SRC:.c=.o)
 

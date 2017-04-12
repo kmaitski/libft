@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 16:41:00 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/11 17:19:42 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/12 10:30:19 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,12 @@ char				*ft_search_and_replace(char *str, char i, char j);
 char				*ft_ulstr(char *str);
 char				*ft_first_word(char *str);
 char				*ft_last_word(char *str);
+unsigned char		ft_reverse_bits(unsigned char octet);
+unsigned char		ft_swap_bits(unsigned char octet);
+int					ft_max(int *tab, unsigned int len);
+char				*ft_wdmatch(char *str1, char *str2);
+int					ft_do_op(int number1, char sign, int number2);
+void				ft_print_bits(unsigned char octet);
+char				*ft_strrev(char *str);
 
 #endif

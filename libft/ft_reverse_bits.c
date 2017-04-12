@@ -1,10 +1,12 @@
 #include "libft.h"
 
-unsigned char	reverse_bits(unsigned char octet)
+unsigned char	ft_reverse_bits(unsigned char octet)
 {
-	unsigned char	result = 0;
-	int		bit = 128;
-
+	unsigned char	result;
+	int				bit;
+	
+	result = 0;
+	bit = 128;
 	while (octet)
 	{
 		result = result + (octet % 2) * bit;
