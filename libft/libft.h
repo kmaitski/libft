@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 16:41:00 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/11 09:11:12 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/11 17:19:42 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,10 @@ size_t				ft_lstsize(t_list *head_node);
 void				ft_lstaddn(t_list **list, t_list *new_node, void *content);
 t_list				*ft_lstn(t_list *head_node, size_t n);
 void				ft_swap(int *a, int *b);
-void				ft_aff_a(void);
-void				ft_countdown(void);
-void				ft_print_numbers(void);
+void				ft_rev_print(char *str);
+char				*ft_search_and_replace(char *str, char i, char j);
+char				*ft_ulstr(char *str);
+char				*ft_first_word(char *str);
+char				*ft_last_word(char *str);
 
 #endif
