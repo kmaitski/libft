@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 16:41:00 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/12 17:48:36 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/13 08:26:15 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,8 @@ char				*ft_wdmatch(char *str1, char *str2);
 int					ft_do_op(int number1, char sign, int number2);
 void				ft_print_bits(unsigned char octet);
 char				*ft_strrev(char *str);
+char				*ft_epur_str(char *str);
+int					*ft_rrange(int start, int end);
+int					ft_pgcd(unsigned int nbr1, unsigned int nbr2);
 
 #endif
