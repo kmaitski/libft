@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 12:46:35 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/03/22 16:59:17 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/12 17:25:47 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t n)
 {
-	int		i;
-	size_t	dest_len;
-	size_t	src_len;
-	int		bytes_to_copy;
+	unsigned int	i;
+	size_t			dest_len;
+	size_t			src_len;
+	unsigned int	bytes_to_copy;
 
 	i = 0;
 	dest_len = ft_strlen(dest);

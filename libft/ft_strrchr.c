@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 12:46:09 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/03/15 20:18:50 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/12 17:31:18 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	int	str_len;
+	unsigned int	str_len;
 
 	str_len = ft_strlen(str);
 	while (str_len && str[str_len] != c)

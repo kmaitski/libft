@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 19:07:22 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/03/22 16:52:51 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/12 17:18:11 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*fresh;
-	int		i;
-	int		j;
+	char			*fresh;
+	int				i;
+	unsigned int	j;
 
 	if (!s1 || !s2)
 		return (NULL);

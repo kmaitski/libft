@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 13:18:53 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/03/15 21:05:44 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/12 17:30:50 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ static int	is_needle_in_haystack(const char *haystack, const char *needle,
 
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	i;
-	size_t	needle_length;
+	unsigned int	i;
+	size_t			needle_length;
 
 	i = 0;
 	needle_length = ft_strlen(needle);

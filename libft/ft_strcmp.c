@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 10:01:23 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/03/23 18:10:16 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/12 17:15:25 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
-	int		i;
+	unsigned int	i;
 
 	i = 0;
 	while (s1[i] || s2[i])

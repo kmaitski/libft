@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 16:41:00 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/12 10:30:19 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/12 17:48:36 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstaddback(t_list **list, t_list *new_node);
 t_list				*ft_lstlast(t_list *head_node);
-size_t				ft_lstsize(t_list *head_node);
+unsigned int		ft_lstsize(t_list *head_node);
 void				ft_lstaddn(t_list **list, t_list *new_node, void *content);
 t_list				*ft_lstn(t_list *head_node, size_t n);
 void				ft_swap(int *a, int *b);
@@ -95,8 +95,6 @@ char				*ft_search_and_replace(char *str, char i, char j);
 char				*ft_ulstr(char *str);
 char				*ft_first_word(char *str);
 char				*ft_last_word(char *str);
-unsigned char		ft_reverse_bits(unsigned char octet);
-unsigned char		ft_swap_bits(unsigned char octet);
 int					ft_max(int *tab, unsigned int len);
 char				*ft_wdmatch(char *str1, char *str2);
 int					ft_do_op(int number1, char sign, int number2);

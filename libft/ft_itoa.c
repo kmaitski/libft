@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 18:20:35 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/03/23 17:54:07 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/12 16:55:28 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static	int	int_str_len(int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 1;
 	if (n < 0)
@@ -26,8 +26,8 @@ static	int	int_str_len(int n)
 
 char		*ft_itoa(int n)
 {
-	size_t	i;
-	char	*fresh;
+	unsigned int	i;
+	char			*fresh;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));

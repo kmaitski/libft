@@ -6,15 +6,15 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/06 18:19:36 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/03/15 21:03:49 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/12 17:36:50 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	size_t	count_before(char const *s)
+static unsigned int	count_before(char const *s)
 {
-	size_t	i;
+	unsigned int	i;
 
 	i = 0;
 	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
@@ -22,10 +22,10 @@ static	size_t	count_before(char const *s)
 	return (i);
 }
 
-static	size_t	count_after(char const *s)
+static unsigned int	count_after(char const *s)
 {
-	int		length;
-	size_t	i;
+	unsigned int	length;
+	unsigned int	i;
 
 	i = 0;
 	length = ft_strlen(s);
@@ -41,10 +41,10 @@ static	size_t	count_after(char const *s)
 
 char			*ft_strtrim(char const *s)
 {
-	size_t		length;
-	char		*copy;
-	size_t		spaces_before;
-	size_t		i;
+	unsigned int	length;
+	char			*copy;
+	unsigned int	spaces_before;
+	unsigned int	i;
 
 	if (!s)
 		return (NULL);

@@ -6,16 +6,16 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 15:54:57 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/03/15 20:26:11 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/12 17:34:03 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	word_count(char const *s, char c)
+static unsigned int	word_count(char const *s, char c)
 {
-	int	i;
-	int	j;
+	int				i;
+	unsigned int	j;
 
 	i = -1;
 	j = 0;
@@ -25,9 +25,9 @@ static size_t	word_count(char const *s, char c)
 	return (j);
 }
 
-static size_t	word_length(char const *s, char c)
+static unsigned int	word_length(char const *s, char c)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (s[i] && s[i] != c)
@@ -37,9 +37,9 @@ static size_t	word_length(char const *s, char c)
 
 static char		**populate_2d(char const *s, char **arr, char c)
 {
-	size_t	i;
-	size_t	j;
-	size_t	word_len;
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	word_len;
 
 	i = 0;
 	j = 0;
@@ -62,8 +62,8 @@ static char		**populate_2d(char const *s, char **arr, char c)
 
 char			**ft_strsplit(char const *s, char c)
 {
-	size_t	words;
-	char	**fresh;
+	unsigned int	words;
+	char			**fresh;
 
 	if (!s || !c)
 		return (NULL);

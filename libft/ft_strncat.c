@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 13:33:14 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/02/02 15:10:59 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/12 17:28:09 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strncat(char *dest, const char *src, size_t n)
 {
-	int		i;
-	size_t	j;
+	unsigned int	i;
+	size_t			j;
 
 	i = ft_strlen(dest);
 	j = 0;
