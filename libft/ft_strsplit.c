@@ -35,7 +35,7 @@ static unsigned int	word_length(char const *s, char c)
 	return (i);
 }
 
-static char		**populate_2d(char const *s, char **arr, char c)
+static char			**populate_2d(char const *s, char **arr, char c)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -60,7 +60,7 @@ static char		**populate_2d(char const *s, char **arr, char c)
 	return (arr);
 }
 
-char			**ft_strsplit(char const *s, char c)
+char				**ft_strsplit(char const *s, char c)
 {
 	unsigned int	words;
 	char			**fresh;

@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-static unsigned int	count_before(char const *s)
+static size_t	count_before(char const *s)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
 	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
@@ -22,10 +22,10 @@ static unsigned int	count_before(char const *s)
 	return (i);
 }
 
-static unsigned int	count_after(char const *s)
+static size_t	count_after(char const *s)
 {
-	unsigned int	length;
-	unsigned int	i;
+	int	length;
+	int	i;
 
 	i = 0;
 	length = ft_strlen(s);
@@ -41,10 +41,10 @@ static unsigned int	count_after(char const *s)
 
 char			*ft_strtrim(char const *s)
 {
-	unsigned int	length;
-	char			*copy;
-	unsigned int	spaces_before;
-	unsigned int	i;
+	int		length;
+	char	*copy;
+	size_t	spaces_before;
+	int		i;
 
 	if (!s)
 		return (NULL);

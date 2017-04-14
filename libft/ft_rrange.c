@@ -17,7 +17,7 @@ int	*ft_rrange(int start, int end)
 	int				*array;
 	int				range_size;
 	unsigned int	i;
-	
+
 	i = 0;
 	if (end < 0)
 	{
@@ -32,7 +32,7 @@ int	*ft_rrange(int start, int end)
 		while (range_size--)
 			array[i++] = end++;
 	else
-		while(range_size--)
+		while (range_size--)
 			array[i++] = end--;
 	return (array);
 }

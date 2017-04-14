@@ -14,8 +14,9 @@
 
 char	*ft_epur_str(char *str)
 {
-	unsigned int	i = 0;
+	unsigned int	i;
 
+	i = 0;
 	while (str[i] == ' ' || str[i] == '	')
 		i++;
 	while (str[i])

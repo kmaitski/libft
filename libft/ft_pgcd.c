@@ -14,14 +14,14 @@
 
 int	ft_pgcd(unsigned int nbr1, unsigned int nbr2)
 {
-	int	denominator;
-	int	highest_denominator;
+	unsigned int	denominator;
+	unsigned int	highest_denominator;
 
 	denominator = 1;
 	highest_denominator = 0;
 	while (denominator <= nbr1 && denominator <= nbr2)
 	{
-		if (!(int1 % denominator) && !(int2 % denominator))
+		if (!(nbr1 % denominator) && !(nbr2 % denominator))
 			highest_denominator = denominator;
 		denominator++;
 	}
