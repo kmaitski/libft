@@ -6,12 +6,19 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 13:17:39 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/03/15 23:08:10 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/20 18:58:33 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* 
+ * ===  FUNCTION  ==============================================================
+ *         Name:  ft_strdup
+ *  Description:  Returns a pointer to a newly allocated string which is a
+ *  			  duplicate of the string s.
+ * =============================================================================
+ */
 char	*ft_strdup(const char *s)
 {
 	char	*new;
@@ -23,4 +30,4 @@ char	*ft_strdup(const char *s)
 	while (s[++i])
 		new[i] = s[i];
 	return (new);
-}
+}		/* -----  end of function ft_strdup  ----- */

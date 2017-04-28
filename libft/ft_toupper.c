@@ -6,15 +6,21 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/03 11:49:00 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/02/03 11:54:10 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/20 20:09:34 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* 
+ * ===  FUNCTION  ==============================================================
+ *         Name:  ft_toupper
+ *  Description:  Converts lowercase letter to uppercase.
+ * =============================================================================
+ */
 int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		c = c - 32;
 	return (c);
-}
+}		/* -----  end of function ft_toupper  ----- */

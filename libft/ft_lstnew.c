@@ -6,12 +6,24 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 15:49:45 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/03/22 21:40:13 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/20 20:18:09 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* 
+ * ===  FUNCTION  ==============================================================
+ *         Name:  ft_lstnew
+ *  Description:  Allocates and returns a “fresh” link. The variables content
+ *  			  and content_size of the new link are initialized by copy of
+ *  			  the parameters of the function. If the parameter content is
+ *  			  null, the variable content is initialized to NULL and the
+ *  			  variable content_size is initialized to 0 even if the
+ *  			  parameter content_size isn’t. The variable next is initialized
+ *  			  to NULL. If the allocation fails, the function returns NULL.
+ * =============================================================================
+ */
 t_list	*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*node;
@@ -32,4 +44,4 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	}
 	node->next = NULL;
 	return (node);
-}
+}		/* -----  end of function ft_lstnew  ----- */
