@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 10:14:48 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 11:30:46 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/29 09:56:36 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,15 @@ static int			*intialize_hex_array(void)
 {
 	int		i;
 	char	c;
+	int		hex_array[16];
 
-	i = 0;
-	c = a;
+	i = -1;
+	c = 'a';
+	while (++i < 11)
+		hex_array[i] = i;
+	while (i < 17)
+		hex_[i++] = c++;
+	return (hex_array);
 }
 
 static int			get_value(char c, int str_base)
