@@ -6,40 +6,75 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 10:14:48 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/29 09:56:36 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/30 12:23:16 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+#include <stdio.h>
+
+/******************************************************
+**               funtion prototypes                 ***
+*******************************************************/
+int ft_atoi_base(const char *str, int str_base);
+static int *intialize_hex_array(void);
+static int get_value(char c, int str_base);
+static unsigned int get_result(const char *str, int str_base);
+
+/* 
+ * ===  FUNCTION  ==============================================================
+ *         Name:  intialize_hex_array
+ *  Description:  Intializes the hex_array for use.
+ * =============================================================================
+ */
 static int			*intialize_hex_array(void)
 {
-	int		i;
-	char	c;
-	int		hex_array[16];
+	unsigned int		i;
+	char				c;
+	int					hex_array[16];
+	int					*return_array;
 
-	i = -1;
+	i = 0;
 	c = 'a';
-	while (++i < 11)
+	while (i < 10)
+	{
 		hex_array[i] = i;
-	while (i < 17)
-		hex_[i++] = c++;
-	return (hex_array);
-}
+		i++;
+	}
+	while (i < 16)
+		hex_array[i++] = c++;
+	return_array = hex_array;
+	return (return_array);
+}		/* -----  end of function intialize_hex_array  ----- */
 
+/* 
+ * ===  FUNCTION  ==============================================================
+ *         Name:  get_value
+ *  Description:  Returns the value for one spot on the string.
+ * =============================================================================
+ */
 static int			get_value(char c, int str_base)
 {
 	int	i;
-	int	hex[16] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b',
-	'c', 'd', 'e', 'f' };
-
+	int	*hex;
+//	printf("%c", c);
+	hex = intialize_hex_array();
+//	printf("%d", hex[9]);
 	i = -1;
 	if (c <= 'A' && c >= 'F')
 		c += 32;
-	while (++i < str_base)
+	while (++i <= str_base)
 		if (c == hex[i])
 			return (i);
 	return (-1);
-}
+}		/* -----  end of function get_value  ----- */
 
+/* 
+ * ===  FUNCTION  ==============================================================
+ *         Name:  get_result
+ *  Description:  Get the result for ft_atoi_base
+ * =============================================================================
+ */
 static unsigned int	get_result(const char *str, int str_base)
 {
 	unsigned int	i;
@@ -52,13 +87,33 @@ static unsigned int	get_result(const char *str, int str_base)
 		|| (str[i] <= 'A' && str[i] >= 'F'))
 	{
 		value = get_value(str[i], str_base);
+//		printf("%d", value);
 		if (value < 0)
 			return (result);
 		result = result * str_base + value;
 		i++;
 	}
 	return (result);
-}
+}		/* -----  end of function get_result  ----- */
+
+/* 
+ * ===  FUNCTION  ==============================================================
+ *         Name:  ft_atoi_base
+ *  Description:  function that converts the string argument str (base N <= 16)
+ *  			  to an integer (base 10) and returns it.
+ *
+ *				  The characters recognized in the input are: 0123456789abcdef.
+ *				  Those are, of course, to be trimmed according to the requested
+ *				  base. For example, base 4 recognizes "0123" and base 16
+ *				  recognizes "0123456789abcdef".
+ *
+ *  			  Uppercase letters must also be recognized: "12fdb3" is the
+ *  			  same as "12FDB3".
+ *
+ *  			  Minus signs ('-') are interpreted only if they are the first
+ *  			  character of the string.
+ * =====================================================================================
+ */
 
 int					ft_atoi_base(const char *str, int str_base)
 {
@@ -72,4 +127,9 @@ int					ft_atoi_base(const char *str, int str_base)
 	if (*str == '-' || *str == '+')
 		str++;
 	return (get_result(&*str, str_base) * is_negative);
+}		/* -----  end of function ft_atoi_base  ----- */
+
+int main(void)
+{
+	printf("%d", ft_atoi_base("7DE", 16));
 }
