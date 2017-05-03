@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 10:14:48 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/30 12:23:16 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/02 14:04:44 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,16 +56,23 @@ static int			*intialize_hex_array(void)
 static int			get_value(char c, int str_base)
 {
 	int	i;
-	int	*hex;
-//	printf("%c", c);
-	hex = intialize_hex_array();
-//	printf("%d", hex[9]);
-	i = -1;
-	if (c <= 'A' && c >= 'F')
+	static int	*hex = NULL;
+	if (!hex)
+		hex = intialize_hex_array();
+	i = 9;
+	if (c >= 'A' && c <= 'F')
 		c += 32;
-	while (++i <= str_base)
-		if (c == hex[i])
+	if (c >= '0' && c <= '9')
+	{
+		c -= '0';
+		return (c);
+	}
+	else
+	{
+		while (++i <= str_base)
+			if (c == hex[i])
 			return (i);
+	}
 	return (-1);
 }		/* -----  end of function get_value  ----- */
 
@@ -84,10 +91,9 @@ static unsigned int	get_result(const char *str, int str_base)
 	i = 0;
 	result = 0;
 	while ((str[i] >= '0' && str[i] <= '9') || (str[i] >= 'a' && str[i] <= 'f')
-		|| (str[i] <= 'A' && str[i] >= 'F'))
+		|| (str[i] >= 'A' && str[i] <= 'F'))
 	{
 		value = get_value(str[i], str_base);
-//		printf("%d", value);
 		if (value < 0)
 			return (result);
 		result = result * str_base + value;
@@ -128,8 +134,3 @@ int					ft_atoi_base(const char *str, int str_base)
 		str++;
 	return (get_result(&*str, str_base) * is_negative);
 }		/* -----  end of function ft_atoi_base  ----- */
-
-int main(void)
-{
-	printf("%d", ft_atoi_base("7DE", 16));
-}

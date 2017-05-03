@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 16:41:00 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 21:34:00 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/02 16:38:13 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ char				*ft_last_word(char *str);
 char				*ft_wdmatch(char *str1, char *str2);
 char				*ft_strrev(char *str);
 char				*ft_epur_str(char *str);
+char				*ft_str_capitalizer(char *str);
 
 /* 
  * 	Allocate memory for new string functions
@@ -135,6 +136,7 @@ int					ft_max(int *tab, unsigned int len);
 int					ft_do_op(int number1, char sign, int number2);
 int					*ft_rrange(int start, int end);
 int					ft_pgcd(unsigned int nbr1, unsigned int nbr2);
+int					*ft_range(int start, int end);
 
 /* 
  * 	Linked list manipulation functions
@@ -154,6 +156,12 @@ t_list				*ft_lstn(t_list *head_node, size_t n);
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstaddback(t_list **list, t_list *new_node);
 void				ft_lstaddn(t_list **list, t_list *new_node, void *content);
+
+/*
+ * Bit manipulation functions
+ */
+
+unsigned char 		ft_reverse_bits(wchar_t octet);
 
 
 #endif
