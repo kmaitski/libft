@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 16:41:00 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/19 17:04:08 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/19 23:04:46 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ typedef struct		s_list
  *	Write functions
  */
 
-void				ft_putchar(int c);
-void				ft_putchar_fd(char c, int fd);
+void				ft_putchar(wchar_t c);
+void				ft_putchar_fd(wchar_t c, int fd);
 void				ft_putstr(char const *s);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putnbr(int n);
@@ -59,6 +59,7 @@ char				*ft_strstr(const char *haystack, const char *needle);
 char				*ft_strnstr(const char *haystack, const char *needle, size_t len);
 size_t				ft_strlen(char const *str);
 char				*ft_strcpy(char *dest, const char *src);
+char				*ft_strncpy(char *dest, const char *src, size_t n);
 char				*ft_strchr(const char *str, int c);
 char				*ft_strrchr(const char *str, int c);
 char				*ft_strcat(char *dest, const char *src);

@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/20 11:53:22 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/26 17:09:59 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/19 22:52:43 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,15 @@
  *  			  by the argument str.
  * =============================================================================
  */
+#include <stdio.h>
 void	*ft_memchr(const void *str, int c, size_t n)
 {
 	const char	*char_str;
 
-	char_str = str;
+	char_str = (const char *)str;
 	while (n--)
 	{
-		if (*char_str == (unsigned char)c)
+		if (*char_str == (char)c)
 			return ((void*)char_str);
 		char_str++;
 	}

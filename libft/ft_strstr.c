@@ -6,11 +6,12 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 13:38:17 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/26 17:11:09 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/19 23:03:08 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 /* 
  * ===  FUNCTION  ==============================================================
@@ -46,9 +47,12 @@ char		*ft_strstr(const char *haystack, const char *needle)
 {
 	if (!*needle || haystack == needle)
 		return ((char *)haystack);
-	while (*haystack++)
+	while (*haystack)
+	{
 		if (*haystack == *needle)
 			if (is_needle_in_haystack(haystack, needle) == 1)
 				return ((char*)haystack);
+		haystack++;
+	}
 	return (NULL);
 }		/* -----  end of function ft_strstr  ----- */
