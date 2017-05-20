@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_first_word.c                                    :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/12 17:46:35 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 21:08:25 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/02/02 13:35:04 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/05/19 20:38:17 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,15 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_first_word.c
- *  Description:  Takes a string and returns its first word. A word is a
- *  			  section of string delimited by spaces/tabs or by the start/end
- *  			  of the string.
+ *         Name:  ftIsAlpha
+ *  Description:  Checks if the passed character is alphabetic.
  * =============================================================================
  */
-char	*ft_first_word(char *str)
+int	ftIsAlpha(char character)
 {
-	unsigned int	i;
-	unsigned int	j;
-
-	i = 0;
-	while (str[i] < 33 && str[i])
-		i++;
-	if (!str[i])
-		return (NULL);
-	j = i;
-	while (str[j] > 32 && str[j])
-		j++;
-	return (ft_strsub(str, i, j - i));
-}		/* -----  end of function ft_first_word.c  ----- */
+	if ((character >= 'a' && character <= 'z') || (character >= 'A' && character
+				<= 'Z'))
+		return (1);
+	else
+		return (0);
+}		/* -----  end of function ftIsAlpha  ----- */

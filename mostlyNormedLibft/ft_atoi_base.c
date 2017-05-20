@@ -6,12 +6,11 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 10:14:48 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/02 14:04:44 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/18 20:21:16 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 /******************************************************
 **               funtion prototypes                 ***
@@ -23,19 +22,51 @@ static unsigned int get_result(const char *str, int str_base);
 
 /* 
  * ===  FUNCTION  ==============================================================
+ *         Name:  ft_atoi_base
+ *  Description:  function that converts the string argument str (base N <= 16)
+ *  			  to an integer (base 10) and returns it.
+ *
+ *				  The characters recognized in the input are: 0123456789abcdef.
+ *				  Those are, of course, to be trimmed according to the 
+ *				  requested base. For example, base 4 recognizes "0123" and base
+ *				  16 recognizes "0123456789abcdef".
+ *
+ *  			  Uppercase letters must also be recognized: "12fdb3" is the
+ *  			  same as "12FDB3".
+ *
+ *  			  Minus signs ('-') are interpreted only if they are the first
+ *  			  character of the string.
+ * =============================================================================
+ */
+
+int					atoiBase(const char *STR, int strBase)
+{
+	int	isNegative;
+
+	isNegative = 1;
+	while (*STR < 33 || *STR == 127)
+		STR++;
+	if (*STR == '-')
+		isNegative = -1;
+	if (*STR == '-' || *STR == '+')
+		STR++;
+	return (getResult(&*STR, strBase) * isNegative);
+}		/* -----  end of function ft_atoi_base  ----- */
+/* 
+ * ===  FUNCTION  ==============================================================
  *         Name:  intialize_hex_array
  *  Description:  Intializes the hex_array for use.
  * =============================================================================
  */
-static int			*intialize_hex_array(void)
+static int			*intializeHexArray(void)
 {
 	unsigned int		i;
-	char				c;
-	int					hex_array[16];
+	char				hexLetters;
+	int					hexArray[16];
 	int					*return_array;
 
 	i = 0;
-	c = 'a';
+	hexLetters = 'a';
 	while (i < 10)
 	{
 		hex_array[i] = i;
@@ -102,35 +133,4 @@ static unsigned int	get_result(const char *str, int str_base)
 	return (result);
 }		/* -----  end of function get_result  ----- */
 
-/* 
- * ===  FUNCTION  ==============================================================
- *         Name:  ft_atoi_base
- *  Description:  function that converts the string argument str (base N <= 16)
- *  			  to an integer (base 10) and returns it.
- *
- *				  The characters recognized in the input are: 0123456789abcdef.
- *				  Those are, of course, to be trimmed according to the requested
- *				  base. For example, base 4 recognizes "0123" and base 16
- *				  recognizes "0123456789abcdef".
- *
- *  			  Uppercase letters must also be recognized: "12fdb3" is the
- *  			  same as "12FDB3".
- *
- *  			  Minus signs ('-') are interpreted only if they are the first
- *  			  character of the string.
- * =====================================================================================
- */
 
-int					ft_atoi_base(const char *str, int str_base)
-{
-	int	is_negative;
-
-	is_negative = 1;
-	while (*str < 33 || *str == 127)
-		str++;
-	if (*str == '-')
-		is_negative = -1;
-	if (*str == '-' || *str == '+')
-		str++;
-	return (get_result(&*str, str_base) * is_negative);
-}		/* -----  end of function ft_atoi_base  ----- */

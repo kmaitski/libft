@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 16:41:00 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/03 17:21:29 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/19 17:04:08 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char				*ft_strrchr(const char *str, int c);
 char				*ft_strcat(char *dest, const char *src);
 char				*ft_strncat(char *dest, const char *src, size_t n);
 size_t				ft_strlcat(char *dest, const char *src, size_t n);
-int					ft_atoi(const char *str);
+int					ft_atoi(const char *STR);
 char				*ft_search_and_replace(char *str, char i, char j);
 char				*ft_ulstr(char *str);
 char				*ft_first_word(char *str);
@@ -73,6 +73,8 @@ char				*ft_wdmatch(char *str1, char *str2);
 char				*ft_strrev(char *str);
 char				*ft_epur_str(char *str);
 char				*ft_str_capitalizer(char *str);
+char				*revWstr(char *str);
+
 
 /* 
  * 	Allocate memory for new string functions
@@ -136,6 +138,7 @@ int					ft_max(int *tab, unsigned int len);
 int					ft_do_op(int number1, char sign, int number2);
 int					ft_pgcd(unsigned int nbr1, unsigned int nbr2);
 int					*ft_range(int start, int end);
+void				sortIntTab(int *tab, unsigned int size);
 
 /* 
  * 	Linked list manipulation functions

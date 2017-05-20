@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   firstWord.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/02 13:35:04 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/26 17:11:34 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/04/12 17:46:35 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/05/19 20:26:16 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,24 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_isalpha
- *  Description:  Checks if the passed character is alphabetic.
+ *         Name:  firstWord.c
+ *  Description:  Takes a string and returns its first word. A word is a
+ *  			  section of string delimited by spaces/tabs or by the start/end
+ *  			  of the string.
  * =============================================================================
  */
-int	ft_isalpha(int c)
+char	*firstWord(char *str)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	else
-		return (0);
-}		/* -----  end of function ft_isalpha  ----- */
+	unsigned int	i;
+	unsigned int	index;
+
+	i = 0;
+	while (str[i] < 33 && str[i])
+		i++;
+	if (!str[i])
+		return (NULL);
+	index = i;
+	while (str[index] > 32 && str[index])
+		index++;
+	return (ft_strsub(str, i, index - i));
+}		/* -----  end of function firstWord.c  ----- */

@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 16:41:00 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/18 21:11:12 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/19 20:57:08 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,12 @@ size_t				ft_strlcat(char *dest, const char *src, size_t n);
 int					ftAtoi(const char *STR);
 char				*ft_search_and_replace(char *str, char i, char j);
 char				*ft_ulstr(char *str);
-char				*ft_first_word(char *str);
 char				*ft_last_word(char *str);
 char				*ft_wdmatch(char *str1, char *str2);
 char				*ft_strrev(char *str);
-char				*ft_epur_str(char *str);
 char				*ft_str_capitalizer(char *str);
 int					atoiBase(const char *STR, int strBase);
+char				*revWstr(char *str);
 
 
 /* 
@@ -84,10 +83,12 @@ char				*ft_strmap(char const *s, char (*f)(char));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
-char				*ft_itoa(int n);
+char				*itoa(int nbr);
 char				*ft_strdup(const char *s);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_strtrim(char const *s);
+char				*epurStr(char *str);
+char				*firstWord(char *str);
 
 /*
  *	Memory allocation functions
@@ -118,11 +119,11 @@ void				ft_strdel(char **as);
 /*
  * 	Is functions
  */
-int					ft_isalpha(int c);
-int					ft_isdigit(int c);
-int					ft_isalnum(int c);
-int					ft_isascii(int c);
-int					ft_isprint(int c);
+int					ftIsAlpha(char character);
+int					ftIsDigit(char character);
+int					ftIsAlNum(char character);
+int					ftIsAscii(char character);
+int					ftIsPrint(char character);
 
 /* 
  * 	Character manipulation functions
@@ -138,6 +139,7 @@ int					ft_max(int *tab, unsigned int len);
 int					doOp(int number1, char sign, int number2);
 int					ft_pgcd(unsigned int nbr1, unsigned int nbr2);
 int					*ft_range(int start, int end);
+int					sortIntTab(int *tab, unsigned int size);
 
 /* 
  * 	Linked list manipulation functions

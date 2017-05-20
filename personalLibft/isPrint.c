@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/02 13:17:23 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 20:05:23 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/02/02 13:35:56 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/05/19 20:49:01 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_isascii
- *  Description:  Tests if a given character, in the current locale, can be
- *  			  represented as a valid 7–bit US-ASCII character.
+ *         Name:  ftIsprint
+ *  Description:  Checks whether the passed character is printable. A printable
+ *  			  character is a character that is not a control character.
  * =============================================================================
  */
-int	ft_isascii(int c)
+int	ftIsPrint(char character)
 {
-	if (c >= 0 && c <= 127)
+	if (character >= 32 && character <= 126)
 		return (1);
 	else
 		return (0);
-}		/* -----  end of function ft_isascii  ----- */
+}		/* -----  end of function ftIsPrint  ----- */

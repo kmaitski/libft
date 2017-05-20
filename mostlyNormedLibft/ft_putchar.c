@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 09:25:56 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/17 20:46:59 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/18 20:22:59 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ unsigned char	*wcharToUtf8(wchar_t c, unsigned char *buffer)
  */
 void	ft_putchar(wchar_t c)
 {
-	unsigned char	*buffer;
+	unsigned char	*buffer = NULL;
 	int	i;
 
 	buffer = wcharToUtf8(c, buffer);
