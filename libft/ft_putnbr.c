@@ -6,18 +6,12 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/06 08:24:26 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/19 22:38:11 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/22 07:41:46 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* 
- * ===  FUNCTION  ==============================================================
- *         Name:  ft_putnbr
- *  Description:  Outputs the integer n to the standard output.
- * =============================================================================
- */
 void	ft_putnbr(int n)
 {
 	if (n == -2147483648)
@@ -38,4 +32,4 @@ void	ft_putnbr(int n)
 	}
 	ft_putnbr(n / 10);
 	ft_putchar((n % 10) + '0');
-}		/* -----  end of function ft_putnbr  ----- */
+}

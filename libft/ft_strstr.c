@@ -6,21 +6,12 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 13:38:17 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/19 23:03:08 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/22 08:08:52 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-/* 
- * ===  FUNCTION  ==============================================================
- *         Name:  is_needle_in_haystack
- *  Description:  After matching a character in haystack with the first
- *  			  character of needle check to see if the needle is found in
- *  			  haystack.
- * =============================================================================
- */
 static int	is_needle_in_haystack(const char *haystack, const char *needle)
 {
 	unsigned int	i;
@@ -33,16 +24,8 @@ static int	is_needle_in_haystack(const char *haystack, const char *needle)
 	if (i == needle_len)
 		return (1);
 	return (0);
-}		/* -----  end of function is_needle_in_haystack  ----- */
+}
 
-/* 
- * ===  FUNCTION  ==============================================================
- *         Name:  ft_strstr
- *  Description:  Finds the first occurrence of the substring needle in the
- *  			  string haystack. The terminating '\0' characters are not
- *  			  compared.
- * =============================================================================
- */
 char		*ft_strstr(const char *haystack, const char *needle)
 {
 	if (!*needle || haystack == needle)
@@ -55,4 +38,4 @@ char		*ft_strstr(const char *haystack, const char *needle)
 		haystack++;
 	}
 	return (NULL);
-}		/* -----  end of function ft_strstr  ----- */
+}

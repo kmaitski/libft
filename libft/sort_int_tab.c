@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   sortIntTab.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/02 13:17:39 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/22 07:51:28 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/05/22 08:43:22 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/05/22 08:44:27 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+void	sort_int_tab (int *tab, unsigned int size)
 {
-	char	*new;
-	int		i;
+	unsigned int	i;
+	int				*store;
 
-	if (!(new = ft_strnew(ft_strlen(s))))
-		return (NULL);
-	i = -1;
-	while (s[++i])
-		new[i] = s[i];
-	return (new);
+	i = 0;
+	while (i < size)
+	{
+		if (tab[i] > tab[i + 1])
+		{
+			store = &tab[i];
+			tab[i] = tab[i + 1];
+			tab[i + 1] = *store;
+			i = 0;
+		}
+		i++;
+	}
 }

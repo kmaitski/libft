@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 13:36:13 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/21 21:45:34 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/22 08:46:06 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ int	ft_atoi(const char *str)
 	{
 		result = result * 10 + *str++ - '0';
 	}
-	return (result * isNegative);
+	return (result * is_negative);
 }

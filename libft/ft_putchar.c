@@ -6,12 +6,11 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 09:25:56 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/19 22:01:32 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/22 07:38:33 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 unsigned char	*threeAnd4BytesBuffer(wchar_t c)
 {
@@ -41,7 +40,6 @@ unsigned char	*threeAnd4BytesBuffer(wchar_t c)
 	return (buffer);
 }
 
-
 unsigned char	*wcharToUtf8(wchar_t c)
 {
 	unsigned char *buffer;
@@ -64,12 +62,6 @@ unsigned char	*wcharToUtf8(wchar_t c)
 	return (buffer);
 }
 
-/* 
- * ===  FUNCTION  ==============================================================
- *         Name:  ft_putchar
- *  Description:  Outputs the character c to the standard output.
- * =============================================================================
- */
 void	ft_putchar(wchar_t c)
 {
 	int	i;
@@ -82,4 +74,4 @@ void	ft_putchar(wchar_t c)
 		write(1, &buffer[i], 1);
 		i++;
 	}
-} 		/* -----  end of function ft_putchar  ----- */
+}

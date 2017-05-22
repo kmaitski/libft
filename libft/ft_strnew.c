@@ -6,21 +6,12 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 13:58:48 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/26 17:07:39 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/22 08:03:43 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-/* 
- * ===  FUNCTION  ==============================================================
- *         Name:  ft_strnew
- *  Description:  Allocates and returns a “fresh” string ending with ’\0’. Each 
- *  			  character of the string is initialized at ’\0’. If the 
- *  			  allocation fails the function returns NULL.
- * =====================================================================================
- */
 char	*ft_strnew(size_t size)
 {
 	char	*fresh;
@@ -32,5 +23,5 @@ char	*ft_strnew(size_t size)
 	while (++i <= size)
 		fresh[i] = '\0';
 	return (fresh);
-}	  /* -----  end of function ft_strnew  ----- */
+}
 

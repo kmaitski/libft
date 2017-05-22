@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 09:25:56 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/19 22:25:37 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/22 07:39:36 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,6 @@ unsigned char	*wcharToUtf8Fd(wchar_t c)
 	return (buffer);
 }
 
-/* 
- * ===  FUNCTION  ==============================================================
- *         Name:  ft_putchar
- *  Description:  Outputs the character c to the standard output.
- * =============================================================================
- */
 void	ft_putchar_fd(wchar_t c, int fd)
 {
 	int	i;
@@ -82,4 +76,4 @@ void	ft_putchar_fd(wchar_t c, int fd)
 		write(fd, &buffer[i], 1);
 		i++;
 	}
-} 		/* -----  end of function ft_putchar  ----- */
+}

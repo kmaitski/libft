@@ -6,7 +6,7 @@
 #    By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/14 17:38:29 by kmaitski          #+#    #+#              #
-#    Updated: 2017/05/19 17:03:05 by kmaitski         ###   ########.fr        #
+#    Updated: 2017/05/22 08:45:10 by kmaitski         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC = ft_putchar.c ft_putstr.c ft_strlen.c ft_strcmp.c ft_strclr.c ft_memalloc.c
 	  ft_search_and_replace.c ft_ulstr.c ft_first_word.c ft_last_word.c\
 	  ft_max.c ft_wdmatch.c ft_do_op.c ft_print_bits.c ft_strrev.c ft_epur_str.c\
 	  ft_pgcd.c ft_print_bits.c ft_str_capitalizer.c ft_range.c ft_reverse_bits.c\
-	  revWstr.c sortIntTab.c
+	  sort_int_tab.c
 
 OFILES = $(SRC:.c=.o)
 

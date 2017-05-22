@@ -6,18 +6,12 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/06 18:19:36 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 17:30:11 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/22 08:11:43 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* 
- * ===  FUNCTION  ==============================================================
- *         Name:  count_before
- *  Description:  Count the whitespaces at the beginning of a string.
- * =============================================================================
- */
 static size_t	count_before(char const *s)
 {
 	int	i;
@@ -26,14 +20,8 @@ static size_t	count_before(char const *s)
 	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 		i++;
 	return (i);
-}/* -----  end of function count_before  ----- */
+}
 
-/* 
- * ===  FUNCTION  ==============================================================
- *         Name:  count_after
- *  Description:  Count the whitespaces at the end of a string.
- * =============================================================================
- */
 static size_t	count_after(char const *s)
 {
 	int	length;
@@ -49,19 +37,8 @@ static size_t	count_after(char const *s)
 		i++;
 	}
 	return (i);
-}		/* -----  end of function count_after  ----- */
+}
 
-/* 
- * ===  FUNCTION  ==============================================================
- *         Name:  ft_strtrim
- *  Description:  Allocates and returns a copy of the string given as argument
- *  			  without whitespaces at the beginning or at the end of the
- *  			  string. The following will be considered as whitespaces the
- *  			  ’ ’, ’\n’ and ’\t’. If s has no whitespaces at the beginning
- *  			  or at the end, the function returns a copy of s. If the
- *  			  allocation fails the function returns NULL.
- * =============================================================================
- */
 char			*ft_strtrim(char const *s)
 {
 	int		length;
@@ -82,4 +59,4 @@ char			*ft_strtrim(char const *s)
 	while (i < length)
 		copy[i++] = s[spaces_before++];
 	return (copy);
-}		/* -----  end of function ft_strtrim  ----- */
+}

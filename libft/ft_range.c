@@ -6,19 +6,11 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/20 14:41:12 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/02 14:07:22 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/22 07:44:49 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/* 
- * ===  FUNCTION  ==================================================================
- *         Name:  get_range
- *  Description:  Returns the range for ft_range to allocate enough memory using 
- *  			  malloc.
- * =================================================================================
- */
 
 static unsigned int	get_range (int start, int end)
 {
@@ -29,18 +21,9 @@ static unsigned int	get_range (int start, int end)
 		range = start - end + 1;
 	else
 		range = end - start + 1;
-	return ((unsigned)range);
-}		/* -----  end of function int get_range  ----- */
+	return (range);
+}
 
-/* 
- * ===  FUNCTION  ==================================================================
- *         Name:  ft_range
- *  Description:  It must allocate (with malloc()) an array of integers, fill it
- *  			  with consecutive values that begin at start and end at end 
- *  			  (Including start and end !), then return a pointer to the first
- *  			  value of the array.
- * =================================================================================
- */
 int					*ft_range (int start, int end)
 {
 	unsigned int	range;
@@ -60,4 +43,4 @@ int					*ft_range (int start, int end)
 		while (i < range)
 			array[i++] = start++;
 	return (array);
-}		/* -----  end of function ft_range  ----- */
+}
