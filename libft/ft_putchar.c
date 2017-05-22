@@ -6,13 +6,13 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 09:25:56 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/22 07:38:33 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/22 11:41:49 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned char	*threeAnd4BytesBuffer(wchar_t c)
+unsigned char	*three_and_4_bytes_buffer(wchar_t c)
 {
 	unsigned char *buffer;
 
@@ -40,7 +40,7 @@ unsigned char	*threeAnd4BytesBuffer(wchar_t c)
 	return (buffer);
 }
 
-unsigned char	*wcharToUtf8(wchar_t c)
+unsigned char	*wchar_to_utf_8(wchar_t c)
 {
 	unsigned char *buffer;
 
@@ -58,16 +58,16 @@ unsigned char	*wcharToUtf8(wchar_t c)
 		buffer[0] = c | 0xC0;
 	}
 	else
-		buffer = threeAnd4BytesBuffer(c);
+		buffer = three_and_4_bytes_buffer(c);
 	return (buffer);
 }
 
-void	ft_putchar(wchar_t c)
+void			ft_putchar(wchar_t c)
 {
-	int	i;
+	int				i;
 	unsigned char	*buffer;
 
-	buffer = wcharToUtf8(c);
+	buffer = wchar_to_utf_8(c);
 	i = 0;
 	while (buffer[i])
 	{

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sortIntTab.c                                       :+:      :+:    :+:   */
+/*   sort_int_tab.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/22 08:43:22 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/22 08:44:27 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/22 11:38:09 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	sort_int_tab (int *tab, unsigned int size)
+void	sort_int_tab(int *tab, unsigned int size)
 {
 	unsigned int	i;
 	int				*store;
