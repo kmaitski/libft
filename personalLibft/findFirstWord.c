@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bzero.c                                            :+:      :+:    :+:   */
+/*   firstWord.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/20 11:52:28 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/18 21:10:30 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/04/12 17:46:35 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/05/22 21:27:48 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ftBzero
- *  Description:  Place n zero-valued bytes in the area pointed to by s.
+ *         Name:  findFirstWord.c
+ *  Description:  Takes a string and returns its first word. A word is a
+ *  			  section of string delimited by spaces/tabs or by the start/end
+ *  			  of the string.
  * =============================================================================
  */
-void	ftBzero(void *ptr, size_t n) {
-	char	*str;
+char	*findFirstWord(char *str) {
+	unsigned int	i = 0;
+	unsigned int	wordLen;
 
-	str = (char *)ptr;
-	while (n--)
-		*str++ = 0;
-}		/* -----  end of function ftBzero  ----- */
+	while (str[i] < 33 && str[i]) {
+		i++;
+	}
+	if (!str[i]) {
+		return (NULL);
+	}
+	while (str[i] > 32 && str[i]) {
+		i++;
+		wordLen++;
+	}
+	return (ft_strsub(str, i, wordLen));
+}		/* -----  end of function findFirstWord.c  ----- */

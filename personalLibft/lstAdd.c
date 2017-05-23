@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 17:45:05 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 20:26:10 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/22 21:38:42 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,23 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_lstadd
- *  Description:  Adds the element new at the beginnning of the list.
+ *         Name:  lstAdd
+ *  Description:  Adds the element newNode at the beginnning of the list.
  * =============================================================================
  */
-void	ft_lstadd(t_list **alst, t_list *new)
-{
-	t_list	*old_head;
+void	lstAdd(lList **aLst, lList *newNode) {
+	lList	*oldHead;
 
-	if (!new)
+	if (!newNode) {
 		return ;
-	old_head = *alst;
-	if (!alst)
-	{
-		*alst = new;
-		new->next = NULL;
 	}
-	else
-	{
-		*alst = new;
-		new->next = old_head;
+	oldHead = *aLst;
+	if (!aLst) {
+		*aLst = newNode;
+		newNode->next = NULL;
 	}
-}		/* -----  end of function ft_lstadd  ----- */
+	else {
+		*aLst = newNode;
+		newNode->next = oldHead;
+	}
+}		/* -----  end of function lstAdd  ----- */

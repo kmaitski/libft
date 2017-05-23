@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 15:57:47 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 20:34:09 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/22 21:45:19 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,25 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_lstaddback
- *  Description:  Adds a new_node to the end of a linked list list.
+ *         Name:  lstAddBack
+ *  Description:  Adds a newNode to the end of a linked list list.
  * =============================================================================
  */
-void	ft_lstaddback(t_list **list, t_list *new_node)
-{
+void	lstAddBack(lList **list, lList *newNode) {
 	t_list	*node;
 
-	if (!new_node)
+	if (!newNode) {
 		return ;
+	}
 	node = *list;
-	if (!node)
-	{
-		node = new_node;
-		new_node->next = NULL;
+	if (!node) {
+		node = newNode;
+		newNode->next = NULL;
 	}
 	else
 	{
 		while (node->next)
 			node = node->next;
-		node->next = new_node;
+		node->next = newNode;
 	}
-}		/* -----  end of function ft_lstaddback  ----- */
+}		/* -----  end of function lstAddBack  ----- */

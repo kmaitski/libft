@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 10:14:48 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/18 21:10:03 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/22 21:00:12 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ static unsigned int getResult(const char *STR, int strBase);
 /* 
  * ===  FUNCTION  ==============================================================
  *         Name:  atoiBase
- *  Description:  function that converts the string argument str (base N <= 16)
- *  			  to an integer (base 10) and returns it.
+ *  Description:  Converts the string argument str (base strBase <= 16) to an
+ *  			  integer (base 10) and returns it.
  *
  *				  The characters recognized in the input are: 0123456789abcdef.
  *				  Those are, of course, to be trimmed according to the 
@@ -40,16 +40,16 @@ static unsigned int getResult(const char *STR, int strBase);
  */
 
 int					atoiBase(const char *STR, int strBase) {
-	int	isNegative;
+	int	negativeNbr;
 
-	isNegative = 1;
+	negativeNbr = 1;
 	while (*STR < 33 || *STR == 127)
 		STR++;
 	if (*STR == '-')
-		isNegative = -1;
+		negativeNbr = -1;
 	if (*STR == '-' || *STR == '+')
 		STR++;
-	return (getResult(&*STR, strBase) * isNegative);
+	return (getResult(&*STR, strBase) * negativeNbr);
 }		/* -----  end of function atoiBase  ----- */
 /* 
  * ===  FUNCTION  ==============================================================
@@ -81,22 +81,27 @@ static int			*intializeHexArray(void) {
  *  Description:  Returns the value for one spot on the string.
  * =============================================================================
  */
-static int			getValue(char hexLetter, int strBase) {
-	int	i;
-	static int	*hex = NULL;
-	if (!hex)
-		hex = intializeHexArray();
-	i = 9;
-	if (hexLetter >= 'A' && hexLetter <= 'F')
-		hexLetter += 32;
-	if (hexLetter >= '0' && hexLetter <= '9') {
-		hexLetter -= '0';
-		return (hexLetter);
+static int			getValue(char hexCharacter, int strBase) {
+	int			i = 9;
+	static int	*hexArray = NULL;
+	
+	if (!hex) {
+		hexArray = intializeHexArray();
+	}
+	if (hexCharacter >= 'A' && hexCharacter	<= 'F')
+		hexCharacter += 32;
+	if (hexCharacter >= '0' && hexCharacter <= '9') {
+		hexCharacter -= '0';
+		if (hexCharacter < strBase) {
+			return (hexCharacter);
+		}
 	}
 	else {
-		while (++i <= strBase)
-			if (hexLetter == hex[i])
-			return (i);
+		while (++i <= strBase) {
+			if (hexLetter == hexArray[i]) {
+				return (i);
+			}
+		}
 	}
 	return (-1);
 }		/* -----  end of function getValue  ----- */
@@ -104,21 +109,19 @@ static int			getValue(char hexLetter, int strBase) {
 /* 
  * ===  FUNCTION  ==============================================================
  *         Name:  getResult
- *  Description:  Get the result for ft_atoi_base
+ *  Description:  Calculates the result for ft_atoi_base
  * =============================================================================
  */
 static unsigned int	getResult(const char *STR, int strBase) {
-	unsigned int	i;
+	unsigned int	i = 0;
 	int				value;
-	unsigned int	result;
+	unsigned int	result = 0;
 
-	i = 0;
-	result = 0;
 	while ((STR[i] >= '0' && STR[i] <= '9') || (STR[i] >= 'a' && STR[i] <= 'f')
 		|| (STR[i] >= 'A' && STR[i] <= 'F')) {
 		value = getValue(STR[i], strBase);
 		if (value < 0)
-			return (result);
+			return (0);
 		result = result * strBase + value;
 		i++;
 	}

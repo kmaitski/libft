@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   firstWord.c                                        :+:      :+:    :+:   */
+/*   bZero.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/12 17:46:35 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/19 20:26:16 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/01/20 11:52:28 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/05/22 21:00:41 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  firstWord.c
- *  Description:  Takes a string and returns its first word. A word is a
- *  			  section of string delimited by spaces/tabs or by the start/end
- *  			  of the string.
+ *         Name:  ftBZero
+ *  Description:  Place n zero-valued bytes in the area pointed to by ptr.
  * =============================================================================
  */
-char	*firstWord(char *str)
-{
-	unsigned int	i;
-	unsigned int	index;
+void	ftBZero(void *ptr, size_t n) {
+	char	*str;
 
-	i = 0;
-	while (str[i] < 33 && str[i])
-		i++;
-	if (!str[i])
-		return (NULL);
-	index = i;
-	while (str[index] > 32 && str[index])
-		index++;
-	return (ft_strsub(str, i, index - i));
-}		/* -----  end of function firstWord.c  ----- */
+	str = (char *)ptr;
+	while (n--) {
+		*str++ = 0;
+	}
+}		/* -----  end of function ftBZero  ----- */

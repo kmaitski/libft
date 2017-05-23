@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 16:41:00 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/19 20:57:08 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/22 21:45:25 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,18 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include <stdio.h>
+
 /*
  *	Linked list structure
  */
-typedef struct		s_list
+
+typedef struct		kList
 {
 	void			*content;
 	size_t			content_size;
-	struct s_list	*next;
-}					t_list;
+	struct kList	*next;
+}					lList;
 
 /*
  *	Write functions
@@ -44,6 +47,7 @@ void				ft_print_bits(unsigned char octet);
 /*
  * 	String comparison functions
  */
+
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *str1, const char *str2, size_t n);
 int					ft_strequ(char const *s1, char const *s2);
@@ -52,6 +56,7 @@ int					ft_strnequ(char const *s1, char const *s2, size_t n);
 /*
  * 	String manipulation functions
  */
+
 void				ft_strclr(char *s);
 void				ft_striter(char *s, void (*f)(char *));
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
@@ -67,7 +72,6 @@ size_t				ft_strlcat(char *dest, const char *src, size_t n);
 int					ftAtoi(const char *STR);
 char				*ft_search_and_replace(char *str, char i, char j);
 char				*ft_ulstr(char *str);
-char				*ft_last_word(char *str);
 char				*ft_wdmatch(char *str1, char *str2);
 char				*ft_strrev(char *str);
 char				*ft_str_capitalizer(char *str);
@@ -78,6 +82,7 @@ char				*revWstr(char *str);
 /* 
  * 	Allocate memory for new string functions
  */
+
 char				*ft_strnew(size_t size);
 char				*ft_strmap(char const *s, char (*f)(char));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -87,25 +92,29 @@ char				*itoa(int nbr);
 char				*ft_strdup(const char *s);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_strtrim(char const *s);
-char				*epurStr(char *str);
-char				*firstWord(char *str);
+char				*trimStrOneSpaceBetweenWords(char *str);
+char				*findFirstWord(char *str);
+char				*findLastword(char *str);
 
 /*
  *	Memory allocation functions
  */
+
 void				*ft_memalloc(size_t size);
 
 /*
  * 	Memory manipulation functions
  */
+
 void				*ft_memset(void *str, int c, size_t n);
-void				ftBzero(void *s, size_t n);
+void				ftBZero(void *ptr, size_t n);
 void				*ft_memchr(const void *str, int c, size_t n);
 int					ft_memcmp(const void *str1, const void *str2, size_t n);
 
 /*
  * 	Memory copy functions
  */
+
 void				*ft_memcpy(void *str1, const void *str2, size_t n);
 void				*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void				*ft_memmove(void *str1, const void *str2, size_t n);
@@ -113,12 +122,14 @@ void				*ft_memmove(void *str1, const void *str2, size_t n);
 /* 
  * 	Free functions
  */
+
 void				ft_memdel(void **ap);
 void				ft_strdel(char **as);
 
 /*
  * 	Is functions
  */
+
 int					ftIsAlpha(char character);
 int					ftIsDigit(char character);
 int					ftIsAlNum(char character);
@@ -128,12 +139,14 @@ int					ftIsPrint(char character);
 /* 
  * 	Character manipulation functions
  */
+
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 
 /* 
  * 	Int manipulation functions
  */
+
 void				ft_swap(int *a, int *b);
 int					ft_max(int *tab, unsigned int len);
 int					doOp(int number1, char sign, int number2);
@@ -144,6 +157,7 @@ int					sortIntTab(int *tab, unsigned int size);
 /* 
  * 	Linked list manipulation functions
  */
+
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
@@ -156,14 +170,15 @@ t_list				*ft_lstn(t_list *head_node, size_t n);
 /*
  * 	Linked list add nodes functions
  */
-void				ft_lstadd(t_list **alst, t_list *new);
-void				ft_lstaddback(t_list **list, t_list *new_node);
+
+void				lstAdd(lList **aLst, lList *newNode);
+void				lstAddBack(lList **list, lList *newNode);
 void				ft_lstaddn(t_list **list, t_list *new_node, void *content);
 
 /*
  * Bit manipulation functions
  */
-unsigned char 		ft_reverse_bits(wchar_t octet);
 
+unsigned char 		ft_reverse_bits(wchar_t octet);
 
 #endif
