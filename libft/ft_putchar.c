@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 09:25:56 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/22 11:41:49 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/22 23:26:47 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,7 @@ unsigned char	*wchar_to_utf_8(wchar_t c)
 	unsigned char *buffer;
 
 	buffer = (unsigned char *)malloc(sizeof(char) * 3);
-	if (c <= 0x7F)
-	{
-		buffer[1] = '\0';
-		buffer[0] = (unsigned char)c;
-	}
-	else if (c <= 0x7FF)
+	if (c <= 0x7FF)
 	{
 		buffer[2] = '\0';
 		buffer[1] = 0x80 | (c & 0x3F);
@@ -66,12 +61,21 @@ void			ft_putchar(wchar_t c)
 {
 	int				i;
 	unsigned char	*buffer;
+	char			ascii;
 
-	buffer = wchar_to_utf_8(c);
-	i = 0;
-	while (buffer[i])
+	if (c <= 0x7F)
 	{
-		write(1, &buffer[i], 1);
-		i++;
+		ascii = (char)c;
+		write(1, &ascii, 1);
+	}
+	else
+	{
+		buffer = wchar_to_utf_8(c);
+		i = 0;
+		while (buffer[i])
+		{
+			write(1, &buffer[i], 1);
+			i++;
+		}
 	}
 }

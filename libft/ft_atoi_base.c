@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 10:14:48 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/21 21:50:58 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/22 23:00:37 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ static unsigned int	get_result(const char *str, int str_base)
 	return (result);
 }
 
-int					atoi_base(const char *str, int str_base)
+int					ft_atoi_base(const char *str, int str_base)
 {
 	int	is_negative;
 

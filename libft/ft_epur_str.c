@@ -6,13 +6,13 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 07:55:03 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/21 22:08:36 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/22 22:59:56 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	find_str_len_for_malloc(char *str)
+static unsigned int	find_str_len_for_malloc(char *str)
 {
 	unsigned int	i;
 	unsigned int	str_len;
@@ -41,7 +41,7 @@ unsigned int	find_str_len_for_malloc(char *str)
 	return (str_len);
 }
 
-char			*epur_str(char *str)
+char				*ft_epur_str(char *str)
 {
 	unsigned int	str_len;
 	char			*new_str;

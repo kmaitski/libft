@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 16:41:00 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/22 11:39:44 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/22 23:03:42 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ char				*ft_strrev(char *str);
 char				*ft_epur_str(char *str);
 char				*ft_str_capitalizer(char *str);
 char				*revWstr(char *str);
-
+int					ft_atoi_base(const char *str, int str_base);
+char 				*ft_epur_str(char *str);
 
 char				*ft_strnew(size_t size);
 char				*ft_strmap(char const *s, char (*f)(char));
