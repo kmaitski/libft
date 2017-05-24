@@ -6,7 +6,7 @@
 #    By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/14 17:38:29 by kmaitski          #+#    #+#              #
-#    Updated: 2017/05/22 21:39:15 by kmaitski         ###   ########.fr        #
+#    Updated: 2017/05/23 18:21:23 by kmaitski         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,8 @@ SRC = ft_putchar.c ft_putstr.c ft_strlen.c ft_strcmp.c ft_strclr.c ft_memalloc.c
       ft_strdup.c ft_strnstr.c ft_strcpy.c ft_strncpy.c ft_strrchr.c ft_strcat.c ft_strncat.c\
 	  ft_strlcat.c ft_strchr.c ft_strstr.c ft_strncmp.c atoi.c isAlpha.c isDigit.c\
       isAlNum.c isAscii.c isPrint.c ft_toupper.c ft_tolower.c ft_lstnew.c\
-      ft_lstdelone.c ft_lstdel.c lstAdd.c ft_lstiter.c ft_lstmap.c ft_lstaddback.c\
-      ft_lstlast.c ft_lstsize.c ft_lstaddn.c ft_lstn.c ft_swap.c ft_rev_print.c\
+      lstDelOne.c lstDel.c lstAdd.c lstIter.c changeList.c lstAddBack.c\
+      getLstLast.c ft_lstsize.c lstAddN.c ft_lstn.c ft_swap.c ft_rev_print.c\
 	  ft_search_and_replace.c ft_ulstr.c findFirstWord.c findLastWord.c\
 	  ft_max.c ft_wdmatch.c doOp.c ft_print_bits.c ft_strrev.c trimStrOneSpaceBetweenWords.c\
 	  ft_pgcd.c ft_print_bits.c ft_str_capitalizer.c ft_range.c ft_reverse_bits.c\

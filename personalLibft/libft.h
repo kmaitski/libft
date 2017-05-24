@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 16:41:00 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/22 21:45:25 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/23 18:21:37 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 typedef struct		kList
 {
 	void			*content;
-	size_t			content_size;
+	size_t			contentSize;
 	struct kList	*next;
 }					lList;
 
@@ -159,11 +159,11 @@ int					sortIntTab(int *tab, unsigned int size);
  */
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
-void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-t_list				*ft_lstlast(t_list *head_node);
+void				lstDelOne(lList **aLst, void (*del)(void *, size_t));
+void				lstDel(lList **aLst, void (*del)(void *, size_t));
+void				lstIter(lList *lst, void (*f)(lList *elem));
+lList				*changList(lList *lst, lList *(*f)(lList *elem));
+lList				*getLstLast(lList *headNode);
 unsigned int		ft_lstsize(t_list *head_node);
 t_list				*ft_lstn(t_list *head_node, size_t n);
 
@@ -173,7 +173,7 @@ t_list				*ft_lstn(t_list *head_node, size_t n);
 
 void				lstAdd(lList **aLst, lList *newNode);
 void				lstAddBack(lList **list, lList *newNode);
-void				ft_lstaddn(t_list **list, t_list *new_node, void *content);
+void				lstAddN(lList **list, lList *newNode, void *content);
 
 /*
  * Bit manipulation functions

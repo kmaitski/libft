@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstaddback.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/02 17:35:30 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/26 17:13:44 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/02/09 15:57:47 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/05/23 17:35:55 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,25 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_lstdel
- *  Description:  Takes as a parameter the adress of a pointer to a link and
- *  			  frees the memory of this link and every successors of that
- *  			  link. Finally the pointer to the link that was just freed must
- *  			  be set to NULL.
+ *         Name:  lstAddBack
+ *  Description:  Adds a newNode to the end of a linked list list.
  * =============================================================================
  */
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
-{
-	t_list	*node;
-	t_list	*next_node;
+void	lstAddBack(lList **list, lList *newNode) {
+	lList	*node;
 
-	if (!del)
+	if (!newNode) {
 		return ;
-	node = *alst;
-	while (node)
-	{
-		next_node = node->next;
-		del(node->content, node->content_size);
-		free(node);
-		node = next_node;
 	}
-	*alst = NULL;
-}		/* -----  end of function ft_lstdel  ----- */
+	node = *list;
+	if (!node) {
+		node = newNode;
+		newNode->next = NULL;
+	}
+	else {
+		while (node->next) {
+			node = node->next;
+		}
+		node->next = newNode;
+	}
+}		/* -----  end of function lstAddBack  ----- */
