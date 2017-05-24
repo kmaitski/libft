@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 16:41:00 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/23 18:21:37 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/23 23:50:15 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ char				*findLastword(char *str);
  *	Memory allocation functions
  */
 
-void				*ft_memalloc(size_t size);
+void				*createNewMemoryArea(size_t sizeOfMemoryArea);
 
 /*
  * 	Memory manipulation functions
@@ -148,7 +148,7 @@ int					ft_tolower(int c);
  */
 
 void				ft_swap(int *a, int *b);
-int					ft_max(int *tab, unsigned int len);
+int					getMaxValue(int *arrayOfInts, unsigned int len);
 int					doOp(int number1, char sign, int number2);
 int					ft_pgcd(unsigned int nbr1, unsigned int nbr2);
 int					*ft_range(int start, int end);
@@ -158,14 +158,14 @@ int					sortIntTab(int *tab, unsigned int size);
  * 	Linked list manipulation functions
  */
 
-t_list				*ft_lstnew(void const *content, size_t content_size);
+lList				*createNewNode(void const *CONTENT, size_t contentSize);
 void				lstDelOne(lList **aLst, void (*del)(void *, size_t));
 void				lstDel(lList **aLst, void (*del)(void *, size_t));
 void				lstIter(lList *lst, void (*f)(lList *elem));
-lList				*changList(lList *lst, lList *(*f)(lList *elem));
+lList				*changeList(lList *lst, lList *(*f)(lList *elem));
 lList				*getLstLast(lList *headNode);
-unsigned int		ft_lstsize(t_list *head_node);
-t_list				*ft_lstn(t_list *head_node, size_t n);
+unsigned int		countList(lList *headNode);
+lList				*getNNode(lList *headNode, size_t nodeNumber);
 
 /*
  * 	Linked list add nodes functions

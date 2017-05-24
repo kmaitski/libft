@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 16:04:30 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 20:36:34 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/23 22:17:45 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,19 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_lstsize
- *  Description:  Counts the nodes in a linked list pointed to by head_node.
+ *         Name:  countList
+ *  Description:  Counts the nodes in a linked list pointed to by headNode.
  * =============================================================================
  */
-unsigned int	ft_lstsize(t_list *head_node)
-{
-	unsigned int	count;
-	t_list			*node;
+unsigned int	countList(lList *headNode) {
+	unsigned int	listSize;
+	lList			*node;
 
-	count = 0;
-	node = head_node;
-	while (node)
-	{
-		count++;
+	listSize = 0;
+	node = headNode;
+	while (node) {
+		listSize++;
 		node = node->next;
 	}
-	return (count);
-}		/* -----  end of function ft_lstsize  ----- */
+	return (listSize);
+}		/* -----  end of function countList  ----- */

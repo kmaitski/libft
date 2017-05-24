@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_max.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/05 11:00:22 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/26 17:07:23 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/04/12 17:47:06 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/05/23 22:24:43 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,23 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  *ft_memalloc
- *  Description:  Allocates and returns a “fresh” memory area. The memory 
- *  			  allocated is initialized to 0. If the allocation fails, the 
- *  			  function returns NULL.
+ *         Name:  getMaxValue
+ *  Description:  Returns the largest number found in the array pointed to by
+ *  			  arrayOfInts.
  * =============================================================================
  */
-void	*ft_memalloc(size_t size)
-{
-	void	*fresh;
+int	getMaxValue(int *arrayOfInts, unsigned int len) {
+	int		maxValue;
 
-	if (!(fresh = (void *)malloc(size)))
-		return (NULL);
-	ft_memset(fresh, 0, size);
-	return (fresh);
-}	  /* -----  end of function *ft_memalloc  ----- */
-
+	maxValue = -2147483648;
+	if (!len || !arrayOfInts) {
+		return (0);
+	}
+	while (len--) {
+		if (*arrayOfInts > maxValue) {
+			maxValue = *arrayOfInts;
+		}
+		arrayOfInts++;
+	}
+	return (maxValue);
+}		/* -----  end of function getMaxValue  ----- */

@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 15:49:45 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 20:18:09 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/23 22:13:18 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_lstnew
+ *         Name:  createNewNode
  *  Description:  Allocates and returns a “fresh” link. The variables content
  *  			  and content_size of the new link are initialized by copy of
  *  			  the parameters of the function. If the parameter content is
@@ -24,24 +24,22 @@
  *  			  to NULL. If the allocation fails, the function returns NULL.
  * =============================================================================
  */
-t_list	*ft_lstnew(void const *content, size_t content_size)
-{
-	t_list	*node;
+lList	*createNewNode(void const *CONTENT, size_t contentSize) {
+	lList	*node;
 
-	if (!(node = (t_list *)malloc(sizeof(t_list))))
+	if (!(node = (lList *)malloc(sizeof(lList)))) {
 		return (NULL);
-	if (!content)
-	{
-		node->content = NULL;
-		node->content_size = 0;
 	}
-	else
-	{
-		if (!(node->content = (void *)malloc(content_size)))
+	if (!CONTENT) {
+		node->content = NULL;
+		node->contentSize = 0;
+	}
+	else {
+		if (!(node->content = (void *)malloc(contentSize)))
 			return (NULL);
-		ft_memcpy(node->content, content, content_size);
-		node->content_size = content_size;
+		ft_memcpy(node->content, CONTENT, contentSize);
+		node->contentSize = contentSize;
 	}
 	node->next = NULL;
 	return (node);
-}		/* -----  end of function ft_lstnew  ----- */
+}		/* -----  end of function createNewNode  ----- */

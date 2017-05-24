@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 12:49:34 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 18:41:59 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/23 23:47:33 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_memccpy
- *  Description:  Copies no more than n bytes from memory area src to memory
- *  			  area dest, stopping when the character c is found. If the
- *  			  memory areas overlap, the results are undefined.
+ *         Name:  memCCpy
+ *  Description:  Copies no more than n bytes from memory area pointed to by
+ *  			  source to memory area destination, stopping when the passed
+ *  			  character is found. If the memory areas overlap, the results
+ *  			  are undefined.
  * =============================================================================
  */
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+void	*memCCpy(void *destionation, const void *source, int character, size_t n)
 {
 	unsigned int	i;
 	char			*char_dest;

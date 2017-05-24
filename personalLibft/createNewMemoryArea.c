@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstn.c                                          :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/09 17:03:24 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 20:44:51 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/01/05 11:00:22 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/05/23 22:30:10 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,19 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_lstn
- *  Description:  Returns the nth node in a list.
+ *         Name:  createNewMemoryArea
+ *  Description:  Allocates and returns a “fresh” memory area. The memory 
+ *  			  allocated is initialized to 0. If the allocation fails, the 
+ *  			  function returns NULL.
  * =============================================================================
  */
-t_list	*ft_lstn(t_list *head_node, size_t n)
-{
-	unsigned int	count;
-	t_list			*node;
+void	*createNewMemoryArea(size_t sizeOfMemoryArea) {
+	void	*newMemoryArea;
 
-	if (!head_node)
+	if (!(newMemoryArea = (void *)malloc(sizeOfMemoryArea))) {
 		return (NULL);
-	count = 1;
-	node = head_node;
-	while ((size_t)count++ < n)
-		node = node->next;
-	return (node);
-}		/* -----  end of function ft_lstn  ----- */
+	}
+	ft_memset(newMemoryArea, 0, sizeOfMemoryArea);
+	return (newMemoryArea);
+}	  /* -----  end of function createNewMemoryArea  ----- */
+

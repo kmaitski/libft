@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_max.c                                           :+:      :+:    :+:   */
+/*   ft_lstn.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/12 17:47:06 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 21:11:36 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/02/09 17:03:24 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/05/23 22:02:38 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,20 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_max
- *  Description:  Returns the largest number found in the array pointed to by
- *  			  tab.
+ *         Name:  getNNode
+ *  Description:  Returns the nth node in a list.
  * =============================================================================
  */
-int	ft_max(int *tab, unsigned int len)
-{
-	int		max;
+lList	*getNNode(lList *headNode, size_t nodeNumber) {
+	unsigned int	nodeNumberCount = 0;
+	lList			*node;
 
-	max = -2147483648;
-	if (!len || !tab)
-		return (0);
-	while (len--)
-	{
-		if (*tab > max)
-			max = *tab;
-		tab++;
+	if (!headNode) {
+		return (NULL);
 	}
-	return (max);
-}		/* -----  end of function ft_max  ----- */
+	node = headNode;
+	while ((size_t)nodeNumberCount++ < nodeNumber) {
+		node = node->next;
+	}
+	return (node);
+}		/* -----  end of function getNNode  ----- */
