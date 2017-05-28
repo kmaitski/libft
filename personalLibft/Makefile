@@ -6,7 +6,7 @@
 #    By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/14 17:38:29 by kmaitski          #+#    #+#              #
-#    Updated: 2017/05/27 19:51:19 by kmaitski         ###   ########.fr        #
+#    Updated: 2017/05/27 20:37:18 by kmaitski         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC = ft_putchar.c ft_putstr.c ft_strlen.c ft_strcmp.c ft_strclr.c createNewMemo
       ft_strnew.c ft_strdel.c ft_striter.c ft_strmap.c ft_striteri.c ft_strmapi.c ft_strequ.c\
       ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c ft_strsplit.c itoa.c ft_putnbr.c\
       ft_putendl.c ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c ft_putnbr_fd.c\
-      ft_memset.c bZero.c ft_memcpy.c memoryCharacterCopy.c ft_memmove.c memoryCharacterCheck.c memoryCompare.c\
+      ft_memset.c bZero.c memeoryCopy.c memoryCharacterCopy.c ft_memmove.c memoryCharacterCheck.c memoryCompare.c\
       ft_strdup.c ft_strnstr.c ft_strcpy.c ft_strncpy.c ft_strrchr.c ft_strcat.c ft_strncat.c\
 	  ft_strlcat.c ft_strchr.c ft_strstr.c ft_strncmp.c atoi.c isAlpha.c isDigit.c\
       isAlNum.c isAscii.c isPrint.c ft_toupper.c ft_tolower.c createNewNode.c\
