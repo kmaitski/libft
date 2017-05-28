@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 16:41:00 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/23 23:50:15 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/27 20:37:21 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,15 +108,19 @@ void				*createNewMemoryArea(size_t sizeOfMemoryArea);
 
 void				*ft_memset(void *str, int c, size_t n);
 void				ftBZero(void *ptr, size_t n);
-void				*ft_memchr(const void *str, int c, size_t n);
-int					ft_memcmp(const void *str1, const void *str2, size_t n);
+void				*memoryCharacterCheck(const void *STRINGPTR, int character,
+		size_t nbrOfBytes);
+int					memoryCompare(const void *MEMORYAREA1PTR, const void
+		*MEMORYAREA2PTR, size_t nbrOfBytes);
 
 /*
  * 	Memory copy functions
  */
 
-void				*ft_memcpy(void *str1, const void *str2, size_t n);
-void				*ft_memccpy(void *dest, const void *src, int c, size_t n);
+void				*memoryCopy(void *memoryArea1Ptr, const void *MEMORYAREA2PTR,
+		size_t nbrOfCharacters);
+void				*memoryCharacterCopy(void *destinationAreaPtr, const void
+		*SOURCEAREAPTR, int character, size_t nbrOfBytes);
 void				*ft_memmove(void *str1, const void *str2, size_t n);
 
 /* 

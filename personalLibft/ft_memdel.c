@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 13:38:24 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 16:30:29 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/27 20:37:11 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_memdel
- *  Description:  Takes as a parameter the address of a memory area that needs 
+ *         Name:  memoryDelete
+ *  Description:  Takes as a parameter the addressOfAMemoryAreaPtr that needs 
  *  			  to be freed, then puts the pointer to NULL.
  * =============================================================================
  */
 
-void	ft_memdel(void **ap)
+void	memoryDelete(void **addressOfAMemoryAreaPtr)
 {
 	if (!ap)
 		return ;

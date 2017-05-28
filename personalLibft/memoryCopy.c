@@ -6,28 +6,28 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/20 11:52:56 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 18:39:29 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/27 20:34:15 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /* 
- * ===  FUNCTION  ======================================================================
- *         Name:  ft_memcpy
- *  Description:  Copies n characters from memory area str2 to memory area str1.
- * =====================================================================================
+ * ===  FUNCTION  ==============================================================
+ *         Name:  memoryCopy
+ *  Description:  Copies nbrOfCharacters from memoryArea2Ptr to memoryArea1Ptr.
+ *  			  This function replicates memcpy from the string.h standard C
+ *  			  library.
+ * =============================================================================
  */
-void	*ft_memcpy(void *str1, const void *str2, size_t n)
-{
-	char		*char_str1;
-	const char	*char_str2;
-	size_t		i;
+void	*memoryCopy(void *memoryArea1Ptr, const void *MEMORYAREA2PTR, size_t
+		nbrOfCharacters) {
+	char		*charMemoryArea1Ptr = (char *)memoryArea1Ptr;
+	const char	*CHARMEMORYAREA2PTR = (const char *)MEMORYAREA2PTR;
+	size_t		i = -1;
 
-	char_str1 = str1;
-	char_str2 = str2;
-	i = -1;
-	while (++i < n)
-		char_str1[i] = char_str2[i];
-	return (char_str1);
-}		/* -----  end of function ft_memcpy  ----- */
+	while (++i < nbrOfCharacters) {
+		charMemoryArea1Ptr[i] = CHARMEMORYAREA2PTR[i];
+	}
+	return (charMemoryArea1Ptr);
+}		/* -----  end of function memoryCopy  ----- */
