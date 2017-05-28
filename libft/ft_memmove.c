@@ -6,12 +6,18 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/20 11:55:19 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/22 07:35:15 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/20 18:47:05 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  ft_memmove
+ *  Description:  Copies n characters from str2 to str1. For overlapping memory blocks, memmove() is a safer approach than ft_memcpy().
+ * =====================================================================================
+ */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t		i;
@@ -28,4 +34,4 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		while (n--)
 			char_dest[n] = char_src[n];
 	return (char_dest);
-}
+}		/* -----  end of function ft_memmove  ----- */

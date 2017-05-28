@@ -6,7 +6,7 @@
 #    By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/14 17:38:29 by kmaitski          #+#    #+#              #
-#    Updated: 2017/05/22 08:45:10 by kmaitski         ###   ########.fr        #
+#    Updated: 2017/04/13 08:26:44 by kmaitski         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,8 @@ SRC = ft_putchar.c ft_putstr.c ft_strlen.c ft_strcmp.c ft_strclr.c ft_memalloc.c
       ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_lstaddback.c\
       ft_lstlast.c ft_lstsize.c ft_lstaddn.c ft_lstn.c ft_swap.c ft_rev_print.c\
 	  ft_search_and_replace.c ft_ulstr.c ft_first_word.c ft_last_word.c\
-	  ft_max.c ft_wdmatch.c ft_do_op.c ft_print_bits.c ft_strrev.c ft_epur_str.c\
-	  ft_pgcd.c ft_print_bits.c ft_str_capitalizer.c ft_range.c ft_reverse_bits.c\
-	  sort_int_tab.c
+	  ft_max.c ft_wdmatch.c ft_do_op.c ft_print_bits.c ft_strrev.c ft_epur_str.c ft_rrange.c\
+	  ft_pgcd.c
 
 OFILES = $(SRC:.c=.o)
 

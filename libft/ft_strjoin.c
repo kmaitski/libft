@@ -6,12 +6,20 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 19:07:22 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/22 07:53:49 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/26 17:09:24 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* 
+ * ===  FUNCTION  ==============================================================
+ *         Name:  ft_strjoin
+ *  Description:  Allocates and returns a “fresh” string ending with ’\0’,
+ *  			  result of the concatenation of s1 and s2. If the allocation
+ *  			  fails the function returns NULL.
+ * =====================================================================================
+ */
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char			*fresh;
@@ -30,4 +38,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		fresh[i++] = s2[j++];
 	fresh[i] = '\0';
 	return (fresh);
-}
+}		/* -----  end of function ft_strjoin  ----- */

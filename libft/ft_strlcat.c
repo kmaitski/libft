@@ -6,12 +6,20 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 12:46:35 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/22 07:54:18 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/26 17:10:13 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* 
+ * ===  FUNCTION  ==============================================================
+ *         Name:  ft_strlcat
+ *  Description:  Appends the NUL-terminated string src to the end of dst. It
+ *  			  will append at most size - strlen(dst) - 1 bytes,
+ *  			  NULL-terminating the result.
+ * ==============================================================================
+ */
 size_t	ft_strlcat(char *dest, const char *src, size_t n)
 {
 	unsigned int	i;
@@ -31,4 +39,4 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n)
 		*dest++ = src[i++];
 	*dest = '\0';
 	return (src_len + dest_len);
-}
+}		/* -----  end of function ft_strlcat  ----- */

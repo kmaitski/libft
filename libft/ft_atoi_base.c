@@ -6,53 +6,31 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 10:14:48 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/22 23:00:37 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/20 11:30:46 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 static int			*intialize_hex_array(void)
 {
-	unsigned int		i;
-	char				hex_letters;
-	int					hex_array[16];
-	int					*return_array;
+	int		i;
+	char	c;
 
 	i = 0;
-	hex_letters = 'a';
-	while (i < 10)
-	{
-		hex_array[i] = i;
-		i++;
-	}
-	while (i < 16)
-		hex_array[i++] = c++;
-	return_array = hex_array;
-	return (return_array);
+	c = a;
 }
 
 static int			get_value(char c, int str_base)
 {
-	int			i;
-	static int	*hex = NULL;
+	int	i;
+	int	hex[16] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b',
+	'c', 'd', 'e', 'f' };
 
-	if (!hex)
-		hex = intialize_hex_array();
-	i = 9;
-	if (c >= 'A' && c <= 'F')
+	i = -1;
+	if (c <= 'A' && c >= 'F')
 		c += 32;
-	if (c >= '0' && c <= '9')
-	{
-		c -= '0';
-		return (c);
-	}
-	else
-	{
-		while (++i <= str_base)
-			if (c == hex[i])
-				return (i);
-	}
+	while (++i < str_base)
+		if (c == hex[i])
+			return (i);
 	return (-1);
 }
 
@@ -65,7 +43,7 @@ static unsigned int	get_result(const char *str, int str_base)
 	i = 0;
 	result = 0;
 	while ((str[i] >= '0' && str[i] <= '9') || (str[i] >= 'a' && str[i] <= 'f')
-		|| (str[i] >= 'A' && str[i] <= 'F'))
+		|| (str[i] <= 'A' && str[i] >= 'F'))
 	{
 		value = get_value(str[i], str_base);
 		if (value < 0)

@@ -6,12 +6,18 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 13:15:27 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/21 22:09:58 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/04/26 17:12:21 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* 
+ * ===  FUNCTION  ==============================================================
+ *         Name:  ft_isalnum
+ *  Description:  Checks if the passed character is alphanumeric.
+ * =============================================================================
+ */
 int	ft_isalnum(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') ||
@@ -19,4 +25,4 @@ int	ft_isalnum(int c)
 		return (1);
 	else
 		return (0);
-}
+}		/* -----  end of function ft_isalnum  ----- */
