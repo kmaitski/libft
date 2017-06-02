@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_reverse_bits.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/02 13:17:39 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/22 07:51:28 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/04/14 15:57:07 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/05/26 14:34:05 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+unsigned char	ft_reverse_bits(wchar_t octet)
 {
-	char	*new;
-	int		i;
+	unsigned char	result;
+	unsigned int	bits;
+	unsigned int	byte;
 
-	if (!(new = ft_strnew(ft_strlen(s))))
-		return (NULL);
-	i = -1;
-	while (s[++i])
-		new[i] = s[i];
-	return (new);
+	result = 0;
+	bits = 8;
+	byte = 128;
+	while (bits--)
+	{
+		result = result + (octet % 2) * byte;
+		byte /= 2;
+		octet >>= 1;
+	}
+	return (result);
 }

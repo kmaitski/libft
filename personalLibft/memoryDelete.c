@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 13:38:24 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/27 20:37:11 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/06/01 18:10:33 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 
 void	memoryDelete(void **addressOfAMemoryAreaPtr)
 {
-	if (!ap)
+	if (!addressOfAMemoryAreaPtr)
 		return ;
-	free(*ap);
-	*ap = NULL;
-}	  /* -----  end of function ft_memdel  ----- */
+	free(*addressOfAMemoryAreaPtr);
+	*addressOfAMemoryAreaPtr = NULL;
+}	  /* -----  end of function memoryDelete  ----- */

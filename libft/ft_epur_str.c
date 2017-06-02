@@ -6,33 +6,63 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 07:55:03 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 21:26:53 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/22 22:59:56 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* 
- * ===  FUNCTION  ==============================================================
- *         Name:  ft_epur_str
- *  Description:  Takes a string, and displays this string with exactly one
- *  			  space between words, with no spaces or tabs either at the
- *  			  beginning or the end. A "word" is defined as a part of a string
- *  			  delimited either by spaces/tabs, or by the start/end of the string.
- * =====================================================================================
- */
-char	*ft_epur_str(char *str)
+static unsigned int	find_str_len_for_malloc(char *str)
 {
 	unsigned int	i;
+	unsigned int	str_len;
 
 	i = 0;
+	str_len = 0;
 	while (str[i] == ' ' || str[i] == '	')
 		i++;
 	while (str[i])
 	{
-		if (str[i] > 32 || (str[i] < 33 && str[i + 1] > 32))
-			write(1, &str[i], 1);
-		i++;
+		if (str[i] != ' ' && str[i] != '	')
+		{
+			str_len++;
+			i++;
+		}
+		else if (str[i] == ' ' || str[i] == '	')
+		{
+			while (str[i] == ' ' || str[i] == '	')
+				i++;
+			str_len++;
+		}
 	}
-	return (str);
-}		/* -----  end of function ft_epur_str  ----- */
+	i--;
+	if (str[i] == ' ' || str[i] == '	')
+		str_len--;
+	return (str_len);
+}
+
+char				*ft_epur_str(char *str)
+{
+	unsigned int	str_len;
+	char			*new_str;
+	unsigned int	i;
+
+	str_len = find_str_len_for_malloc(str);
+	new_str = (char *)malloc(sizeof(char) * (str_len + 1));
+	i = 0;
+	while (*str == ' ' || *str == '	')
+		str++;
+	while (*str)
+	{
+		if (*str != ' ' && *str != '	')
+			new_str[i++] = *str++;
+		else if (*str == '	' || *str == ' ')
+		{
+			while (*str == ' ' || *str == '	')
+				str++;
+			new_str[i++] = ' ';
+		}
+	}
+	new_str[str_len] = '\0';
+	return (new_str);
+}

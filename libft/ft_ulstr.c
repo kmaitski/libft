@@ -6,19 +6,12 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 17:46:19 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 21:01:22 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/22 08:13:42 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* 
- * ===  FUNCTION  ==============================================================
- *         Name:  ft_ulstr
- *  Description:  Takes a string and reverses the case of all its letters. Other
- *  			  characters remain unchanged.
- * =============================================================================
- */
 char	*ft_ulstr(char *str)
 {
 	unsigned int	i;
@@ -33,4 +26,4 @@ char	*ft_ulstr(char *str)
 		i++;
 	}
 	return (str);
-}		/* -----  end of function ft_ulstr  ----- */
+}

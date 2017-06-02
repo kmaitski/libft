@@ -6,18 +6,12 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 17:48:20 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 21:23:36 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/05/22 08:05:33 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* 
- * ===  FUNCTION  ==============================================================
- *         Name:  ft_strrev
- *  Description:  Reverses (in-place) a string.
- * =============================================================================
- */
 char	*ft_strrev(char *str)
 {
 	int				i;
@@ -33,4 +27,4 @@ char	*ft_strrev(char *str)
 		str[i] = k;
 	}
 	return (str);
-}		/* -----  end of function ft_strrev  ----- */
+}

@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 13:36:13 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/22 20:25:47 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/06/01 18:08:36 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  *  Description:  Converts the string argument str to an integer (type int).
  * =============================================================================
  */
-int	ftAtoi(const char *STR) {
+int	ftAtoi(char const *STR) {
 	int	result;
 	int	negativeNbr;
 
