@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/20 11:55:51 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 18:32:23 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/06/02 15:59:25 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_memset
- *  Description:  Copies the character c (an unsigned char) to the first n
- *  			  characters of the string pointed to, by the argument str.
+ *         Name:  memorySet
+ *  Description:  Copies character (an unsigned char) to the first
+ *  			  nbrOfCharacters to the memory area pointed to by memoryAreaPtr
  * =============================================================================
  */
-void	*ft_memset(void *str, int c, size_t n)
-{
-	char			*char_str;
-	unsigned int	i;
+void	*memorySet(void *memoryAreaPtr, int character, size_t nbrOfCharacters) {
+	char	*charMemoryAreaPtr;
+	size_t	i;
 
-	char_str = str;
+	charMemoryAreaPtr = (char *)memoryAreaPtr;
 	i = 0;
-	while (n--)
-		char_str[i++] = c;
-	return (char_str);
-}		/* -----  end of function ft_memset  ----- */
+	while (nbrOfCharacters--) {
+		charMemoryAreaPtr[i++] = character;
+	}
+	return (charMemoryAreaPtr);
+}		/* -----  end of function memorySet  ----- */

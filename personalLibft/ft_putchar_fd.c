@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/06 08:55:41 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 17:55:44 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/06/02 16:46:33 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_putchar_fd
- *  Description:  Outputs the char c to the file descriptor fd.
+ *         Name:  writeChararcterToFileDescriptor
+ *  Description:  Outputs character to fileDescriptor.
  * =============================================================================
  */
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}		/* -----  end of function ft_putchar_fd  ----- */
+void	writeCharacterToFileDescriptor(char character, int fileDescriptor) {
+	write(fileDescriptor, &character, 1);
+}		/* -----  end of function writeCharacterToFileDescriptor  ----- */

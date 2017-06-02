@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 17:47:57 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/28 18:28:43 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/06/02 16:14:10 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_print_bits
+ *         Name:  printBits
  *  Description:  Takes a byte and prints it in binary.
  * =============================================================================
  */
-void	ft_print_bits(unsigned char octet)
-{
-	unsigned int	i;
+void	printBits(unsigned char byte) {
+	unsigned int	bits;
 
-	i = 8;
-	while (i--)
-	{
-		if (octet / 128)
+	bits = 8;
+	while (bits--) {
+		if (byte / 128) {
 			write(1, "1", 1);
-		else
+		}
+		else {
 			write(1, "0", 1);
-		octet <<= 1;
+		}
+		byte <<= 1;
 	}
-}		/* -----  end of function ft_print_bits  ----- */
+}		/* -----  end of function printBits  ----- */

@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 08:09:48 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/26 17:15:08 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/06/02 16:08:24 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,20 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_pgcd
- *  Description:  Takes ints and returns their highest common denominator.
+ *         Name:  getHighestCommonDenominator
+ *  Description:  Takes two positive integers and returns their highest common
+ *  			  denominator.
  * =============================================================================
  */
-int	ft_pgcd(unsigned int nbr1, unsigned int nbr2)
-{
-	unsigned int	denominator;
-	unsigned int	highest_denominator;
+int	getHighestCommonDenominator(unsigned int firstNumber, unsigned int secondNumber) {
+	unsigned int	denominator = 1;
+	unsigned int	highestCommonDenominator = 0;
 
-	denominator = 1;
-	highest_denominator = 0;
-	while (denominator <= nbr1 && denominator <= nbr2)
-	{
-		if (!(nbr1 % denominator) && !(nbr2 % denominator))
-			highest_denominator = denominator;
+	while (denominator <= firstNumber && denominator <= secondNumber) {
+		if (!(firstNumber % denominator) && !(secondNumber % denominator)) {
+			highestCommonDenominator = denominator;
+		}
 		denominator++;
 	}
-	return (highest_denominator);
-}		/* -----  end of function ft_pgcd  ----- */
+	return (highestCommonDenominator);
+}		/* -----  end of function getHighestCommonDenominator  ----- */

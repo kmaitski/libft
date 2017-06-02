@@ -1,4 +1,3 @@
-/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
@@ -33,8 +32,8 @@ typedef struct		kList
  *	Write functions
  */
 
-void				ft_putchar(int c);
-void				ft_putchar_fd(char c, int fd);
+void				printCharacter(wchar_t character);
+void				writeCharacter_fd(char c, int fd);
 void				ft_putstr(char const *s);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putnbr(int n);
@@ -42,7 +41,7 @@ void				ft_putnbr_fd(int n, int fd);
 void				ft_putendl(char const *s);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_rev_print(char *str);
-void				ft_print_bits(unsigned char octet);
+void				printBits(unsigned char byte);
 
 /*
  * 	String comparison functions
@@ -106,21 +105,17 @@ void				*createNewMemoryArea(size_t sizeOfMemoryArea);
  * 	Memory manipulation functions
  */
 
-void				*ft_memset(void *str, int c, size_t n);
+void				*memorySet(void *memoryAreaPtr, int character, size_t nbrOfCharacters);
 void				ftBZero(void *ptr, size_t n);
-void				*memoryCharacterCheck(const void *STRINGPTR, int character,
-		size_t nbrOfBytes);
-int					memoryCompare(const void *MEMORYAREA1PTR, const void
-		*MEMORYAREA2PTR, size_t nbrOfBytes);
+void				*memoryCharacterCheck(const void *STRINGPTR, int character, size_t nbrOfBytes);
+int					memoryCompare(const void *MEMORYAREA1PTR, const void *MEMORYAREA2PTR, size_t nbrOfBytes);
 
 /*
  * 	Memory copy functions
  */
 
-void				*memoryCopy(void *memoryArea1Ptr, const void *MEMORYAREA2PTR,
-		size_t nbrOfCharacters);
-void				*memoryCharacterCopy(void *destinationAreaPtr, const void
-		*SOURCEAREAPTR, int character, size_t nbrOfBytes);
+void				*memoryCopy(void *memoryArea1Ptr, const void *MEMORYAREA2PTR, size_t nbrOfCharacters);
+void				*memoryCharacterCopy(void *destinationAreaPtr, const void *SOURCEAREAPTR, int character, size_t nbrOfBytes);
 void				*ft_memmove(void *str1, const void *str2, size_t n);
 
 /* 
@@ -154,7 +149,7 @@ int					ft_tolower(int c);
 void				ft_swap(int *a, int *b);
 int					getMaxValue(int *arrayOfInts, unsigned int len);
 int					doOp(int number1, char sign, int number2);
-int					ft_pgcd(unsigned int nbr1, unsigned int nbr2);
+int					getCommonHighestDenominator(unsigned int firstNumber, unsigned int secondNumber);
 int					*ft_range(int start, int end);
 int					sortIntTab(int *tab, unsigned int size);
 
