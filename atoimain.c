@@ -1,25 +1,35 @@
 /*
- * =====================================================================================
+ * =================================================================================
  *
- *       Filename:  atoimain.c
+ *       Filename:  atoiMain.c
  *
- *    Description:  
+ *    Description:  Driver for atoi testing for overflow and underflow
  *
  *        Version:  1.0
- *        Created:  05/22/2017 23:33:58
+ *        Created:  06/02/2017 18:36:13
  *       Revision:  none
  *       Compiler:  gcc
  *
  *         Author:  Kevin Maitski (KM), kevin.maitski@gmail.com
  *   Organization:  42
  *
- * =====================================================================================
+ * =================================================================================
  */
 
 #include <stdlib.h>
 #include <stdio.h>
+#include "libft.h"
 
+/* 
+ * ===  FUNCTION  ==================================================================
+ *         Name:  main
+ *  Description:  Driver for testing atoi overflow and underflow
+ * =================================================================================
+ */
 int	main(void)
 {
-	printf("%d", atoi("99999999999999999"));
-}
+	const char *str = "9999999999999999999";
+//	const char *str = ("-2147483648");
+	printf("The atoi result is: %d\n", atoi(str));
+	printf("Your atoi result is: %d\n", ft_atoi(str));
+}				/* ----------  end of function main  ---------- */
