@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 16:41:00 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/26 14:24:03 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/06/06 21:15:44 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ char				*ft_str_capitalizer(char *str);
 char				*revwstr(char *str);
 int					ft_atoi_base(const char *str, int str_base);
 char				*ft_epur_str(char *str);
+void				ft_brainfuck(char *brain_fuck_ptr);
 
 char				*ft_strnew(size_t size);
 char				*ft_strmap(char const *s, char (*f)(char));

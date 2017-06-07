@@ -18,7 +18,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "libft.h"
+#include "libft/libft.h"
 
 /* 
  * ===  FUNCTION  ==================================================================
@@ -28,8 +28,8 @@
  */
 int	main(void)
 {
-	const char *str = "9999999999999999999";
+	const char *str = "9223372036854775806";
 //	const char *str = ("-2147483648");
 	printf("The atoi result is: %d\n", atoi(str));
-	printf("Your atoi result is: %d\n", ft_atoi(str));
+	printf("You atoi result is: %d\n", ft_atoi(str));
 }				/* ----------  end of function main  ---------- */

@@ -16,10 +16,12 @@
  * =====================================================================================
  */
 
+#include "libft/libft.h"
+
 int	main(void)
 {
 //	wchar_t c = 'a';
-//	wchar_t c = 'b';
+	wchar_t c = 'b';
 //	wchar_t	c = L'ó';
 //	wchar_t c = L'Ԃ';
 //	wchar_t c = L'ぁ';
@@ -28,7 +30,7 @@ int	main(void)
 //	wchar_t c = L'⤀';
 //	wchar_t c = L'⤨';
 //	wchar_t c = L'𐆒';
-	wchar_t c = L'𐆚';
+//	wchar_t c = L'𐆚';
 	ft_putchar(c);
 	ft_putchar(' ');
 }

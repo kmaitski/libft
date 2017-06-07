@@ -6,46 +6,53 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/02 19:28:29 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/06/02 19:30:56 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/06/06 20:53:23 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	brainFuck(char *brainFuckPtr) {
-	size_t 	i = 0;
+static void	brain_fuck_algorithm(char *ptr, size_t loop, char *brain_fuck_ptr)
+{
+	int	i;
+
+	i = -1;
+	while (brain_fuck_ptr[i++])
+	{
+		if (brain_fuck_ptr[i] == '>')
+			++ptr;
+		else if (brain_fuck_ptr[i] == '<')
+			--ptr;
+		else if (brain_fuck_ptr[i] == '+')
+			++*ptr;
+		else if (brain_fuck_ptr[i] == '-')
+			--*ptr;
+		else if (brain_fuck_ptr[i] == '.')
+			write(1, &*ptr, 1);
+		else if (brain_fuck_ptr[i] == ']' && *ptr)
+			loop = 1;
+			while (loop > 0)
+			{
+				if (brain_fuck_ptr[--i] == ']')
+					++loop;
+				else if (brain_fuck_ptr[i] == '[')
+					--loop;
+			}
+	}
+}
+
+void		brain_fuck(char *brain_fuck_ptr)
+{
 	char	array[50000] = {0};
-	char	*ptr = array;
+	char	*ptr;
 	size_t	loop;
 
+	ptr = array;
+	loop = 0;
+	brain_fuck_algorithm(ptr, loop, brain_fuck_ptr);
+}
 
-	while (brainFuckPtr[i]) {
-		if (brainFuckPtr[i] == '>') {
-			++ptr;
-		}
-		else if (brainFuckPtr[i] == '<') {
-			--ptr;
-		}
-		else if (brainFuckPtr[i] == '+') {
-			++*ptr;
-		}
-		else if (brainFuckPtr[i] == '-') {
-			--*ptr;
-		}
-		else if (brainFuckPtr[i] == '.') {
-			write(1, &*ptr, 1);
-		}
-		else if (brainFuckPtr[i] == ']' && *ptr) {
-			loop = 1;
-			while (loop > 0) {
-				if (brainFuckPtr[--i] == ']') {
-					++loop;
-				}
-				else if (brainFuckPtr[i] == '[') {
-					--loop;
-				}
-			}
-		}
-		i++;
-	}
+int main(void)
+{
+	brain_fuck("+++++[>++++[>++++H>+++++i<<-]>>>++\n<<<<-]>>--------.>+++++.>.");
 }
