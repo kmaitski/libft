@@ -33,14 +33,17 @@ typedef struct		kList
  */
 
 void				printCharacter(wchar_t character);
-void				writeCharacter_fd(char c, int fd);
-void				ft_putstr(char const *s);
-void				ft_putstr_fd(char const *s, int fd);
-void				ft_putnbr(int n);
-void				ft_putnbr_fd(int n, int fd);
-void				ft_putendl(char const *s);
-void				ft_putendl_fd(char const *s, int fd);
-void				ft_rev_print(char *str);
+void				writeCharacterToFileDescriptor(char character, int
+		fileDescriptor);
+void				printString(char const *stringPtr);
+void				writeStringToFileDescriptor(char const *stringPtr, int
+		fileDescriptor);
+void				printNumber(int number);
+void				writeNumberToFileDescriptor(int number, int fileDescriptor);
+void				printStringWithNewLine(char const *stringPtr);
+void				writeStringWithNewLineToFd(char const *stringPtr, int
+		fileDescriptor);
+void				printReverseString(char *stringPtr);
 void				printBits(unsigned char byte);
 
 /*
@@ -122,7 +125,7 @@ void				*ft_memmove(void *str1, const void *str2, size_t n);
  * 	Free functions
  */
 
-void				ft_memdel(void **ap);
+void				memoryDelele(void **addressOfAMemoryAreaPtr);
 void				ft_strdel(char **as);
 
 /*
@@ -149,8 +152,9 @@ int					ft_tolower(int c);
 void				ft_swap(int *a, int *b);
 int					getMaxValue(int *arrayOfInts, unsigned int len);
 int					doOp(int number1, char sign, int number2);
-int					getCommonHighestDenominator(unsigned int firstNumber, unsigned int secondNumber);
-int					*ft_range(int start, int end);
+int					getCommonHighestDenominator(unsigned int firstNumber, unsigned
+		int secondNumber);
+int					*getAnArrayOfConsecutiveInts(int startingInt, int endingInt);
 int					sortIntTab(int *tab, unsigned int size);
 
 /* 
@@ -173,11 +177,5 @@ lList				*getNNode(lList *headNode, size_t nodeNumber);
 void				lstAdd(lList **aLst, lList *newNode);
 void				lstAddBack(lList **list, lList *newNode);
 void				lstAddN(lList **list, lList *newNode, void *content);
-
-/*
- * Bit manipulation functions
- */
-
-unsigned char 		ft_reverse_bits(wchar_t octet);
 
 #endif

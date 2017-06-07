@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/06 09:00:56 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 17:57:21 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/01/05 09:27:11 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/06/06 18:49:26 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_putstr_fd
- *  Description:  Outputs the string s to the file descriptor fd.
+ *         Name:  printString
+ *  Description:  Outputs the string pointed at by stringPtr to the standard
+ *  			  output. 
  * =============================================================================
  */
-void	ft_putstr_fd(char const *s, int fd)
-{
-	if (!s)
+void	printString(char const *stringPtr) {
+	if (!stringPtr) {
 		return ;
-	while (*s)
-		ft_putchar_fd(*s++, fd);
-}		/* -----  end of function ft_putstr_fd  ----- */
+	}
+	while (*stringPtr) {
+		printCharacter(*stringPtr++);
+	}
+}		/* end of printString function */

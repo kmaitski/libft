@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_rev_print.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/06 09:05:17 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 18:00:45 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/04/12 17:45:53 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/06/06 19:39:47 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_putendl_fd
- *  Description:  Outputs the string s to the file descriptor fd followed by a
- *  			  ’\n’.
+ *         Name:  printReverseString
+ *  Description:  Takes a string, and outputs the string in reverse on the
+ *  			  standard output.
  * =============================================================================
  */
-void	ft_putendl_fd(char const *s, int fd)
+void	printReverseString(char *stringPtr)
 {
-	if (!s)
-		return ;
-	while (*s)
-		ft_putchar_fd(*s++, fd);
-	ft_putchar_fd('\n', fd);
-}		/* -----  end of function ft_putendl_fd  ----- */
+	size_t	i;
+
+	i = getStringLength(stringPtr);
+	while (i--)
+		write(1, &stringPtr[i], 1);
+}		/* -----  end of function printReverseString  ----- */

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/05 09:27:11 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 16:08:27 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/01/06 08:24:26 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/06/06 18:24:43 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,24 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_putstr
- *  Description:  Outputs the string s to the standard output. 
+ *         Name:  printNumber
+ *  Description:  Outputs a number to the standard output.
  * =============================================================================
  */
-void	ft_putstr(char const *s)
-{
-	if (!s)
+void	printNumber(int number) {
+	if (number == -2147483648) {
+		printCharacter('-');
+		printCharacter('2');
+		number = 147483648;
+	}
+	if (number < 0) {
+		printCharacter('-');
+		number *= -1;
+	}
+	if (number < 10) {
+		printCharacter(number + '0');
 		return ;
-	while (*s)
-		ft_putchar(*s++);
-}
+	}
+	printNumber(number / 10);
+	printCharacter((number % 10) + '0');
+}		/* -----  end of function printNumber  ----- */

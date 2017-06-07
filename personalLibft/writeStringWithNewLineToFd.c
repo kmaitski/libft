@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/06 08:03:02 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 17:53:06 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/01/06 09:05:17 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/06/06 18:11:42 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_putendl
- *  Description:  Outputs the string s to the standard output followed by a
- *  			  ’\n’.
+ *         Name:  writeStringWithNewLineToFd
+ *  Description:  Outputs the string pointed at by stingPtr to a fileDescriptor
+ *  			  followed by a ’\n’.
  * =============================================================================
  */
-void	ft_putendl(char const *s)
-{
-	if (!s)
+void	writeStringWithNewLineToFd(char const *stringPtr, int fileDescriptor) {
+	if (!stringPtr) {
 		return ;
-	while (*s)
-		ft_putchar(*s++);
-	ft_putchar('\n');
-}		/* -----  end of function ft_putendl  ----- */
+	}
+	while (*stringPtr) {
+		writeCharacterToFileDescriptor(*stringPtr++, fileDescriptor);
+	}
+	writeCharacterToFileDescriptor('\n', fileDescriptor);
+}		/* -----  end of function writeStringWithNewLineToFd  ----- */

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/06 08:24:26 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 17:53:46 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/01/06 09:00:56 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/06/06 18:56:48 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,17 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_putnbr
- *  Description:  Outputs the integer n to the standard output.
+ *         Name:  writeStringToFileDescriptor
+ *  Description:  Outputs the string pointed at by stringPtr to a
+ *  			  fileDescriptor.
  * =============================================================================
  */
-void	ft_putnbr(int n)
+void	writeStringToFileDescriptor(char const *stringPtr, int fileDescriptor)
 {
-	if (n == -2147483648)
-	{
-		ft_putchar('-');
-		ft_putchar('2');
-		n = 147483648;
-	}
-	if (n < 0)
-	{
-		ft_putchar('-');
-		n *= -1;
-	}
-	if (n < 10)
-	{
-		ft_putchar(n + '0');
+	if (!stringPtr) {
 		return ;
 	}
-	ft_putnbr(n / 10);
-	ft_putchar((n % 10) + '0');
-}		/* -----  end of function ft_putnbr  ----- */
+	while (*stringPtr) {
+		writeCharacterToFileDescriptor(*stringPtr++, fileDescriptor);
+	}
+}		/* -----  end of function writeStringToFileDescriptor  ----- */
