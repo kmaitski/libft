@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   appendString.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/20 11:56:14 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 19:33:40 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/06/07 19:35:06 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_strcat
- *  Description:  Appends the string pointed to by src to the end of the string
- *  			  pointed to by dest.
+ *         Name:  appendString
+ *  Description:  Appends the string pointed to by sourceStringPtr to the end of
+ *  			  the string pointed to by destinationStringPtr.
  * =============================================================================
  */
-char	*ft_strcat(char *dest, const char *src)
-{
-	unsigned int	i;
+char	*appendString(char *destinationStringPtr, const char *sourceStringPtr) {
+	size_t	i;
 
-	i = ft_strlen(dest);
-	while (*src)
-		dest[i++] = *src++;
-	dest[i] = '\0';
-	return (dest);
-}		/* -----  end of function ft_strcat  ----- */
+	i = getStringLength(destinationStringPtr);
+	while (*sourceStringPtr) {
+		destinationStringPtr[i++] = *sourceStringPtr++;
+	}
+	destinationStringPtr[i] = '\0';
+	return (destinationStringPtr);
+}		/* -----  end of function appendString  ----- */

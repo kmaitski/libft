@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 19:07:22 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/26 17:09:24 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/06/07 20:43:09 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,30 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_strjoin
+ *         Name:  joinStrings
  *  Description:  Allocates and returns a “fresh” string ending with ’\0’,
- *  			  result of the concatenation of s1 and s2. If the allocation
- *  			  fails the function returns NULL.
- * =====================================================================================
+ *  			  result of the concatenation of string1Ptr and string2Ptr. If
+ *  			  the allocation fails the function returns NULL.
+ * ==============================================================================
  */
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	char			*fresh;
-	int				i;
-	unsigned int	j;
+char	*joinStrings(char const *string1Ptr, char const *string2Ptr) {
+	char	*freshStringPtr;
+	int		i = -1;
+	size_t	index = 0;
 
-	if (!s1 || !s2)
+	if (!string1Ptr || !string2Ptr) {
 		return (NULL);
-	if (!(fresh = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
+	}
+	if (!(freshStringPtr = (char *)malloc(sizeof(char) * (getStingLength(string1Ptr) +
+						getStringLength(string2Ptr)) + 1)i)) {
 		return (NULL);
-	i = -1;
-	j = 0;
-	while (s1[++i])
-		fresh[i] = s1[i];
-	while (s2[j])
-		fresh[i++] = s2[j++];
-	fresh[i] = '\0';
-	return (fresh);
-}		/* -----  end of function ft_strjoin  ----- */
+		}
+	while (string1Ptr[++i]) {
+		freshStringPtr[i] = string1Ptr[i];
+		}
+	while (string2Ptr[index]) {
+		freshStringPtr[i++] = string2Ptr[index++];
+	}
+	freshStringPtr[i] = '\0';
+	return (freshStringPtr);
+}		/* -----  end of function joinStrings  ----- */

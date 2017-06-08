@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_capitalizer.c                                  :+:      :+:    :+:   */
+/*   ft_str_capitalizer.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/21 10:09:23 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/02 14:41:20 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/06/07 19:23:58 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_str_capitalizer
+ *         Name:  stringCapitalizer
  *  Description:  Capitalizes the first character of each word (if it's a 
  *				  letter), puts the rest in lowercase.  A "word" is defined as a
  *				  part of a string delimited either by spaces\tabs or by the
@@ -23,18 +23,20 @@
  * =============================================================================
  */
 
-char	*ft_str_capitalizer (char *str)
-{
+char	*stringCapitalizer (char *stringPtr) {
 	int	i;
 
 	i = 0;
-	while (str[i])
-	{
-		if ((str[i] >= 'a' && str[i] <= 'z') && (i == 0 || str[i - 1] < 33))
-			str[i] -= 32;
-		else if ((str[i] >= 'A' && str[i] <= 'Z') && (str[i - 1] > 32))
-			str[i] += 32;
+	while (stringPtr[i]) {
+		if ((stringPtr[i] >= 'a' && stringPtr[i] <= 'z') && (i == 0 ||
+					stringPtr[i - 1] < 33)) {
+			stringPtr[i] -= 32;
+		}
+		else if ((stringPtr[i] >= 'A' && stringPtr[i] <= 'Z') &&
+				(stringPtr[i - 1] > 32)) {
+			stringPtr[i] += 32;
+		}
 		i++;
 	}
-	return (str);
-}		/* -----  end of function ft_str_capitalizer  ----- */
+	return (stringPtr);
+}		/* -----  end of function stringCapitalizer  ----- */

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/05 15:11:40 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 16:43:56 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/01/05 16:03:15 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/06/07 20:33:02 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,21 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_striter
- *  Description:  Applies the function f to each character of the string passed 
- *  			  as argument.
+ *         Name:  applyFunctionToStringAndIndex
+ *  Description:  Applies the function f to each character of the string pointed
+ *  			  at by the pointer passed as argument, and passing its index as
+ *  			  first argument. Each character is passed by address to f to be
+ *  			  modified if necessary.
  * =============================================================================
  */
-void	ft_striter(char *s, void (*f)(char *))
-{
-	if (!s || !f)
-		return ;
-	while (*s)
-		f(s++);
-}	  /* -----  end of function ft_striter  ----- */
+void	applyFunctionToStringAndIndex(char *stringPtr, void (*f)(unsigned int,
+			char *)) {
+	unsigned int	i = 0;
 
+	if (!stringPtr || !f) {
+		return ;
+	}
+	while (*stringPtr) {
+		f(i++, stringPtr++);
+	}
+}	  /* -----  end of function applyFunctionToStringAndIndex  ----- */

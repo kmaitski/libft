@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_search_and_replace.c                            :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/12 17:46:07 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/06/06 19:43:50 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/01/05 15:08:43 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/06/07 19:59:14 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,15 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  searchAndReplace
- *  Description:  In the string pointed to at stringPtr change characters that
- *  			  match the badCharacter, i, with the second character, j.
- * =============================================================================
+ *         Name:  deleteString
+ *  Description:  Takes as a parameter addressOfAString that need to be 
+ *  			  freed, then sets its pointer to NULL.
+ * ==============================================================================
  */
-char	*ft_search_and_replace(char *str, char i, char j)
-{
-	int	k;
-
-	k = -1;
-	while (str[++k])
-		if (str[k] == i)
-			str[k] = j;
-	return (str);
-}		/* -----  end of function ft_search_and_replace  ----- */
+void	deleteString(char **addressOfAString) {
+	if (!addressOfAString) {
+		return ;
+	}
+	free(*addressOfAString);
+	*addressOfAString = NULL;
+}	  /* -----  end of function deleteString  ----- */

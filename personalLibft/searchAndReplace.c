@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   searchAndReplace.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/05 10:01:23 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 16:20:01 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/04/12 17:46:07 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/06/07 19:22:10 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,20 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_strcmp
- *  Description:  Compares the string pointed to, by s1 to the string pointed 
- *  			  to by s2.
+ *         Name:  searchAndReplace
+ *  Description:  In the string pointed to at stringPtr change characters that
+ *  			  match the badCharacter with the replacementCharacter.
  * =============================================================================
- */	
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	unsigned int	i;
+ */
+char	*searchAndReplace(char *stringPtr, char badCharacter, char
+		replacementCharacter) {
+	int	i;
 
-	i = 0;
-	while (s1[i] || s2[i])
-	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
+	i = -1;
+	while (stringPtr[++i]) {
+		if (stringPtr[i] == badCharacter) {
+			stringPtr[i] = replacementCharacter;
+		}
 	}
-	return (0);
-}	/* -----  end of function ft_strcmp  ----- */
+	return (stringPtr);
+}		/* -----  end of function searchAndReplace  ----- */

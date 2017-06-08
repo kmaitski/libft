@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/02 13:36:41 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 19:31:22 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/01/05 17:57:12 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/06/07 20:12:34 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,23 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_strchr
- *  Description:  Searches for the first occurrence of the character c (an
- *  		 	  unsigned char) in the string pointed to by the argument str.
+ *         Name:  areStringsEqual
+ *  Description:  Lexicographical comparison between string1Ptr and string2Ptr.
+ *  			  If the 2 strings are identical the function returns 1, or 0
+ *  			  otherwise.
  * =============================================================================
  */
-char	*ft_strchr(const char *str, int c)
-{
-	while (*str && *str != c)
-		str++;
-	if (*str == c)
-		return ((char*)str);
-	return (NULL);
-}		/* -----  end of function ft_strchr  ----- */
+int	areStringsEqual(char const *string1Ptr, char const *string2Ptr) {
+	size_t	i = 0;
+
+	if (!string1Ptr || !string2Ptr) {
+		return (0);
+	}
+	while (string1Ptr[i] == string2Ptr[i]) {
+		if (!string1Ptr[i] && !string2Ptr[i]) {
+			return (1);
+		}
+		i++;
+	}
+	return (0);
+}	  /* -----  end of function areStringsEqual  ----- */

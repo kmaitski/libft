@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/05 15:08:43 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/26 17:07:57 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/02/02 13:16:37 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/06/07 19:54:28 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,17 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_strdel
- *  Description:  Takes as a parameter the address of a string that need to be 
- *  			  freed, then sets its pointer to NULL.
- * =====================================================================================
+ *         Name:  stringCopy
+ *  Description:  Copies the string pointed to by sourceStringPtr to
+ *  			  destinationStringPtr.
+ * =============================================================================
  */
-void	ft_strdel(char **as)
-{
-	if (!as)
-		return ;
-	free(*as);
-	*as = NULL;
-}	  /* -----  end of function ft_strdel  ----- */
+char	*stringCopy(char *destinationStringPtr, const char *sourceStringPtr) {
+	int	i = -1;
+
+	while (sourceStringPtr[++i]) {
+		destinationStringPtr[i] = sourceStringPtr[i];
+	}
+	destinationStringPtr[i] = '\0';
+	return (destinationStringPtr);
+}		/* -----  end of function stringCopy  ----- */

@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/20 11:55:19 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 18:47:05 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/06/07 19:00:25 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,28 @@
 
 /* 
  * ===  FUNCTION  ======================================================================
- *         Name:  ft_memmove
- *  Description:  Copies n characters from str2 to str1. For overlapping memory blocks, memmove() is a safer approach than ft_memcpy().
+ *         Name:  memoryMove
+ *  Description:  Copies nbrOfBytes from destinationMemoryAreaPtr to
+ *  			  sourceMemoryAreaPtr. For overlapping memory blocks, memoryMove is a
+ *  			  safer approach than memoryCopy.
  * =====================================================================================
  */
-void	*ft_memmove(void *dest, const void *src, size_t n)
-{
-	size_t		i;
-	char		*char_dest;
-	const char	*char_src;
+void	*memoryMove(void *destinationMemoryArea, const void *sourceMemoryAreaPtr, size_t
+		nbrOfBytes) {
+	int		i;
+	char		*destinationStringPtr = (char *)destinationMemoryArea;
+	const char	*sourceStringPtr = (char *)sourceMemoryAreaPtr;
 
 	i = -1;
-	char_dest = dest;
-	char_src = src;
-	if (char_dest < char_src)
-		while (++i < n)
-			char_dest[i] = char_src[i];
-	else
-		while (n--)
-			char_dest[n] = char_src[n];
-	return (char_dest);
-}		/* -----  end of function ft_memmove  ----- */
+	if (destinationStringPtr < sourceStringPtr) {
+		while (++i < (int)nbrOfBytes) {
+			destinationStringPtr[i] = sourceStringPtr[i];
+		}
+	}
+	else {
+		while (nbrOfBytes--) {
+			destinationStringPtr[nbrOfBytes] = sourceStringPtr[nbrOfBytes];
+		}
+	}
+	return (destinationStringPtr);
+}		/* -----  end of function memoryMove  ----- */

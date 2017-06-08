@@ -50,33 +50,37 @@ void				printBits(unsigned char byte);
  * 	String comparison functions
  */
 
-int					ft_strcmp(const char *s1, const char *s2);
+int					stringCompare(const char *string1Ptr, const char *string2Ptr);
 int					ft_strncmp(const char *str1, const char *str2, size_t n);
-int					ft_strequ(char const *s1, char const *s2);
+int					areStringsEqual(char const *string1Ptr, char const *string2Ptr);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 
 /*
  * 	String manipulation functions
  */
 
-void				ft_strclr(char *s);
-void				ft_striter(char *s, void (*f)(char *));
-void				ft_striteri(char *s, void (*f)(unsigned int, char *));
+void				clearString(char *stringPtr);
+void				applyFunctionToString(char *stringPtr, void (*f)(char *));
+void				applyFunctionToStringAndIndex(char *stringPtr, void
+		(*f)(unsigned int, char *));
 char				*ft_strstr(const char *haystack, const char *needle);
 char				*ft_strnstr(const char *haystack, const char *needle, size_t len);
 size_t				ft_strlen(char const *str);
-char				*ft_strcpy(char *dest, const char *src);
-char				*ft_strchr(const char *str, int c);
+char				*stringCopy(char *destinationStringPtr, const char
+		*sourceStringPtr);
+char				*searchStringForCharacter(const char *stringPtr, int character);
 char				*ft_strrchr(const char *str, int c);
-char				*ft_strcat(char *dest, const char *src);
+char				*appendString(char *destinationStringPtr, const char
+		*sourceStringPtr);
 char				*ft_strncat(char *dest, const char *src, size_t n);
 size_t				ft_strlcat(char *dest, const char *src, size_t n);
 int					ftAtoi(const char *STR);
-char				*ft_search_and_replace(char *str, char i, char j);
+char				*searchAndReplace(char *stringPtr, char badCharacter, char
+		replacementCharacter);
 char				*ft_ulstr(char *str);
 char				*ft_wdmatch(char *str1, char *str2);
 char				*ft_strrev(char *str);
-char				*ft_str_capitalizer(char *str);
+char				*stringCapitalizer(char *str);
 int					atoiBase(const char *STR, int strBase);
 char				*revWstr(char *str);
 
@@ -89,9 +93,9 @@ char				*ft_strnew(size_t size);
 char				*ft_strmap(char const *s, char (*f)(char));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
-char				*ft_strjoin(char const *s1, char const *s2);
+char				*joinStrings(char const *string1Ptr, char const *string2Ptr);
 char				*itoa(int nbr);
-char				*ft_strdup(const char *s);
+char				*duplicateString(const char *stringPtr);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_strtrim(char const *s);
 char				*trimStrOneSpaceBetweenWords(char *str);
@@ -119,14 +123,15 @@ int					memoryCompare(const void *MEMORYAREA1PTR, const void *MEMORYAREA2PTR, si
 
 void				*memoryCopy(void *memoryArea1Ptr, const void *MEMORYAREA2PTR, size_t nbrOfCharacters);
 void				*memoryCharacterCopy(void *destinationAreaPtr, const void *SOURCEAREAPTR, int character, size_t nbrOfBytes);
-void				*ft_memmove(void *str1, const void *str2, size_t n);
+void				*memoryMove(void *destinationMemoryAreaPtr, const void
+		*sourceMemoryAreaPtr, size_t nbrOfBytes);
 
 /* 
  * 	Free functions
  */
 
 void				memoryDelele(void **addressOfAMemoryAreaPtr);
-void				ft_strdel(char **as);
+void				deleteString(char **addressOfAString);
 
 /*
  * 	Is functions

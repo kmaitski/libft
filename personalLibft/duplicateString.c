@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 13:17:39 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 18:58:33 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/06/07 20:06:54 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_strdup
+ *         Name:  duplicateString
  *  Description:  Returns a pointer to a newly allocated string which is a
- *  			  duplicate of the string s.
+ *  			  duplicate of the string pointed to by stringPtr.
  * =============================================================================
  */
-char	*ft_strdup(const char *s)
-{
-	char	*new;
-	int		i;
+char	*duplicateString(const char *stringPtr) {
+	char	*newStringPtr;
+	int		i = -1;
 
-	if (!(new = ft_strnew(ft_strlen(s))))
+	if (!(newStringPtr = createNewString(getStringLength(stringPtr)))) {
 		return (NULL);
-	i = -1;
-	while (s[++i])
-		new[i] = s[i];
-	return (new);
-}		/* -----  end of function ft_strdup  ----- */
+	}
+	while (stringPtr[++i]) {
+		newStringPtr[i] = stringPtr[i];
+	}
+	return (newStringPtr);
+}		/* -----  end of function duplicateString  ----- */
