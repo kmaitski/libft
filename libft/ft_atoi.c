@@ -6,31 +6,39 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 13:36:13 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/06/06 22:30:45 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/06/07 22:29:57 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	atoi_length(const char *str)
+static int	overflow(const char *str)
 {
-	int	length;
+	int		length;
+	int 	string_compare_result;
+	size_t	i;
 
 	length = 0;
-	while (*str)
+	string_compare_result = 0;
+	i = 0;
+	while (str[i])
 	{
-		if (ft_isdigit(*str))
+		if (ft_isdigit(str[i]))
 			length++;
-		str++;
+		i++;
 	}
-	return (1);
+	if (length > 18)
+		string_compare_result = ft_strcmp(str, "9223372036854775807");
+	if (string_compare_result >= 0)
+		return (1);
+	return (0);
 }
 
 int			ft_atoi(const char *str)
 {
 	unsigned int	result;
 	int				is_negative;
-//	int				length;
+	int				too_big;
 
 	result = 0;
 	is_negative = 1;
@@ -40,11 +48,11 @@ int			ft_atoi(const char *str)
 		is_negative = -1;
 	if (*str == '-' || *str == '+')
 		str++;
-//	length = atoi_length(str);
-//	if (length > 18 && is_negative == 1)
-//		return (-1);
-//	if (length > 18 && is_negative == -1)
-//		return (0);
+	too_big = overflow(str);
+	if (too_big && is_negative == 1)
+		return (-1);
+	if (too_big  && is_negative == -1)
+		return (0);
 	while (*str >= '0' && *str <= '9')
 		result = result * 10 + *str++ - '0';
 	if (result == 2147483648 && is_negative == -1)

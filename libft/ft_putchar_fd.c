@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 09:25:56 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/06/06 21:42:17 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/06/07 22:32:16 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,6 @@ void			ft_putchar_fd(wchar_t c, int fd)
 			write(fd, &buffer[i], 1);
 			i++;
 		}
-	}
 	free(buffer);
+	}
 }

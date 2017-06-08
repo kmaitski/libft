@@ -6,12 +6,12 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 10:01:23 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/06/06 22:30:42 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/06/07 22:30:07 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#incl
+#include <stdio.h>
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
@@ -25,11 +25,4 @@ int	ft_strcmp(const char *s1, const char *s2)
 		i++;
 	}
 	return (0);
-}
-
-int main(void) {
-	char *str1 = "9223372036854775806";
-	char *str2 = "9223372036854775805";
-
-	ft_strcmp(str1, str2);
 }
