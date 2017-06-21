@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 13:34:23 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 19:50:02 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/06/20 17:57:19 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_strncmp
- *  Description:  Compares at most the first n bytes of str1 and str2.
+ *         Name:  stringCompareBytes
+ *  Description:  Compares at most the first nbrOfBytes of the strings pointed
+ *  to by str1Ptr and str2Ptr.
  * =============================================================================
  */
-int	ft_strncmp(const char *str1, const char *str2, size_t n)
+int	stringCompareBytes(const char *str1Ptr, const char *str2Ptr, size_t nbrOfBytes)
 {
 	size_t	i;
 

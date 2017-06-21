@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 12:46:35 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/26 17:10:13 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/06/20 16:49:24 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,34 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_strlcat
+ *         Name:  appendStrPro
  *  Description:  Appends the NUL-terminated string src to the end of dst. It
  *  			  will append at most size - strlen(dst) - 1 bytes,
  *  			  NULL-terminating the result.
+ *
+ *  			  If it is possible to append the full sting pointed at by
+ *  			  sourceStringPtr to destinationStringPtr it will return the
+ *  			  size of the freshly appeneded string.  If it is not it will
+ *  			  return the length of the source string plus size.
  * ==============================================================================
  */
-size_t	ft_strlcat(char *dest, const char *src, size_t n)
+size_t	appendStrPro(char *destStrPtr, const char *srcStrPtr, size_t size)
 {
-	unsigned int	i;
-	size_t			dest_len;
-	size_t			src_len;
-	unsigned int	bytes_to_copy;
+	unsigned int	i = 0;
+	size_t			destinationStringLength = getStringLength(destStrPtr);
+	size_t			sourceStingLength = getStringLength(srcStrPtr);
+	unsigned int	bytesToCopy;
 
-	i = 0;
-	dest_len = ft_strlen(dest);
-	src_len = ft_strlen(src);
-	bytes_to_copy = n - dest_len - 1;
-	if (n < dest_len)
-		return (src_len + n);
-	while (*dest)
-		dest++;
-	while (src[i] && i < bytes_to_copy)
-		*dest++ = src[i++];
-	*dest = '\0';
-	return (src_len + dest_len);
-}		/* -----  end of function ft_strlcat  ----- */
+	bytesToCopy = size - destinationStringLength - 1;
+	if (size < destinationStringLength) {
+		return (sourceStingLength + size);
+	}
+	while (*destStrPtr) {
+		destStrPtr++;
+	}
+	while (srcStrPtr[i] && size < bytesToCopy) {
+		*destStrPtr++ = srcStrPtr[i++];
+	}
+	*destStrPtr = '\0';
+	return (destinationStringLength + destinationStringLength);
+}		/* -----  end of function appendStrPro  ----- */

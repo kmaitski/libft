@@ -1,23 +1,23 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/14 17:38:29 by kmaitski          #+#    #+#              #
-#    Updated: 2017/06/07 20:44:15 by kmaitski         ###   ########.fr        #
+#    Updated: 2017/06/20 17:57:09 by kmaitski         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRC = printCharacter.c printString.c ft_strlen.c stringCompare.c clearString.c createNewMemoryArea.c memoryDelete.c\
-      ft_strnew.c deleteString.c applyFunctionToString.c ft_strmap.c applyFunctionToStringAndIndex.c ft_strmapi.c areStringsEqual.c\
-      ft_strnequ.c ft_strsub.c ft_joinStrings.c ft_strtrim.c ft_strsplit.c itoa.c printNumber.c\
+SRC = printCharacter.c printString.c getStringLength.c stringCompare.c clearString.c createNewMemoryArea.c memoryDelete.c\
+      ft_strnew.c deleteString.c applyFunctionToString.c createNewStrByFun.c applyFunctionToStringAndIndex.c createNewStrByFuncI.c areStringsEqual.c\
+      ft_strnequ.c ft_strsub.c joinTwoStrings.c ft_strtrim.c ft_strsplit.c itoa.c printNumber.c\
       writeStringWithNewLineToFd.c writeCharacterToFileDescriptor.c writeStringToFileDescriptor.c writeNumberToFileDescriptor.c writeStringWithNewLineToFd.c writeNumberToFileDescriptor.c\
       memorySet.c bZero.c memoryCopy.c memoryCopyCharacter.c memoryMove.c memoryCharacterCheck.c memoryCompare.c\
-      duplicateString.c ft_strnstr.c stringCopy.c ft_strncpy.c searchStringForCharacter.c appendString.c ft_strncat.c\
+      duplicateString.c ft_strnstr.c stringCopy.c ft_strncpy.c searchStringForCharacter.c appendString.c appendStringBytes.c\
 	  ft_strlcat.c ft_strchr.c ft_strstr.c ft_strncmp.c atoi.c isAlpha.c isDigit.c\
       isAlNum.c isAscii.c isPrint.c ft_toupper.c ft_tolower.c createNewNode.c\
       lstDelOne.c lstDel.c lstAdd.c lstIter.c changeList.c lstAddBack.c\

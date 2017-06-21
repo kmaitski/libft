@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 13:33:14 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 19:35:52 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/06/20 17:53:37 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_strncat
- *  Description:  Appends the string pointed to by src to the end of the string
- *  			  pointed to by dest up to n characters long.
+ *         Name:  appendStringBytes
+ *  Description:  Appends the string pointed at by sourceStringPtr to the end of
+ *  			  the string pointed to by destinationStingPtr up to nbrOfBytes 
+ *  			  long.
  * =============================================================================
  */
-char	*ft_strncat(char *dest, const char *src, size_t n)
+char	*appendStrBytes(char *destStrPtr, const char *srcStrPtr, size_t nbrOfBytes)
 {
-	unsigned int	i;
-	size_t			j;
+	size_t	i = getStringLength(destStrPtr);
+	size_t	index = 0;
 
-	i = ft_strlen(dest);
-	j = 0;
-	while (src[j] && j < n)
-		dest[i++] = src[j++];
-	dest[i] = '\0';
-	return (dest);
-}		/* -----  end of function ft_strncat  ----- */
+	while (srcStrPtr[index] && index < nbrOfBytes) {
+		destStrPtr[i++] = srcStrPtr[index++];
+	}
+	destStrPtr[i] = '\0';
+	return (destStrPtr);
+}		/* -----  end of function appendStrBytes  ----- */

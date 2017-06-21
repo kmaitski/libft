@@ -65,15 +65,15 @@ void				applyFunctionToStringAndIndex(char *stringPtr, void
 		(*f)(unsigned int, char *));
 char				*ft_strstr(const char *haystack, const char *needle);
 char				*ft_strnstr(const char *haystack, const char *needle, size_t len);
-size_t				ft_strlen(char const *str);
+size_t				getStringLength(char const *stringPtr);
 char				*stringCopy(char *destinationStringPtr, const char
 		*sourceStringPtr);
 char				*searchStringForCharacter(const char *stringPtr, int character);
 char				*ft_strrchr(const char *str, int c);
 char				*appendString(char *destinationStringPtr, const char
 		*sourceStringPtr);
-char				*ft_strncat(char *dest, const char *src, size_t n);
-size_t				ft_strlcat(char *dest, const char *src, size_t n);
+char				*appendStrBytes(char *destStrPtr, const char *srcStrPtr, size_t nbrOfBytes);
+size_t				appendStrPro(char *destStrPtr, const char *src, size_t size);
 int					ftAtoi(const char *STR);
 char				*searchAndReplace(char *stringPtr, char badCharacter, char
 		replacementCharacter);
@@ -90,10 +90,10 @@ char				*revWstr(char *str);
  */
 
 char				*ft_strnew(size_t size);
-char				*ft_strmap(char const *s, char (*f)(char));
-char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char				*createNewStrByFunc(char const *oldStrPtr, char (*func)(char));
+char				*createNewStrByFuncI(char const *oldStrPtr, char (*func)(unsigned int, char));
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
-char				*joinStrings(char const *string1Ptr, char const *string2Ptr);
+char				*joinTwoStrings(char const *string1Ptr, char const *string2Ptr);
 char				*itoa(int nbr);
 char				*duplicateString(const char *stringPtr);
 char				**ft_strsplit(char const *s, char c);

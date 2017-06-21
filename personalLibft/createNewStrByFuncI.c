@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 16:23:56 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/26 17:08:47 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/06/20 17:44:08 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,28 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_strmapi
- *  Description:  Applies the function f to each character of the string passed
+ *         Name:  createNewStrByFuncI
+ *  Description:  Applies the func  to each character of the string passed
  *  			  as argument by giving its index as first argument to create a
  *  			  “fresh” new string resulting from the successive applications 
  *  			  of f.
  * =============================================================================
  */
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*createNewStrByFuncI(char const *oldStrPtr, char (*func)(unsigned int, char))
 {
-	unsigned int	i;
-	char			*new;
+	unsigned int	i = 0;
+	char			*newStrPtr;
 
-	i = 0;
-	if (!s || !f)
-		return (0);
-	new = (char *)malloc(sizeof(*s) * ft_strlen(s) + 1);
-	if (new == NULL)
-		return (0);
-	while (s[i])
-	{
-		new[i] = f(i, s[i]);
+	if (!oldStrPtr || !func) {
+		return (NULL);
+	}
+	if (!(newStrPtr = (char *)malloc(sizeof(*oldStrPtr) * getStringLength(oldStrPtr) + 1))) {
+		return (NULL);
+	}
+	while (oldStrPtr[i]) {
+		newStrPtr[i] = func(i, oldStrPtr[i]);
 		i++;
 	}
-	new[i] = '\0';
-	return (new);
-}	  /* -----  end of function ft_strmapi  ----- */
+	newStrPtr[i] = '\0';
+	return (newStrPtr);
+}	  /* -----  end of function createNewStrByFuncI  ----- */
