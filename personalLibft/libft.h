@@ -51,9 +51,11 @@ void				printBits(unsigned char byte);
  */
 
 int					stringCompare(const char *string1Ptr, const char *string2Ptr);
-int					ft_strncmp(const char *str1, const char *str2, size_t n);
+int					strCmpBytes(const char *str1Ptr, char *str2Ptr, size_t 
+		nbrOfBytes);
 int					areStringsEqual(char const *string1Ptr, char const *string2Ptr);
-int					ft_strnequ(char const *s1, char const *s2, size_t n);
+int					areStrsEquBytes(char const *str1Ptr, char const *str2Ptr, size_t
+		nbrOfBytes);
 
 /*
  * 	String manipulation functions
@@ -68,6 +70,8 @@ char				*ft_strnstr(const char *haystack, const char *needle, size_t len);
 size_t				getStringLength(char const *stringPtr);
 char				*stringCopy(char *destinationStringPtr, const char
 		*sourceStringPtr);
+char				*strCpyBytes(char *destMemAreaPtr, const char *strPtr, size_t
+		nbrOfBytes);
 char				*searchStringForCharacter(const char *stringPtr, int character);
 char				*ft_strrchr(const char *str, int c);
 char				*appendString(char *destinationStringPtr, const char
@@ -89,10 +93,11 @@ char				*revWstr(char *str);
  * 	Allocate memory for new string functions
  */
 
-char				*ft_strnew(size_t size);
+char				*createNewString(size_t sizeOfString);
 char				*createNewStrByFunc(char const *oldStrPtr, char (*func)(char));
-char				*createNewStrByFuncI(char const *oldStrPtr, char (*func)(unsigned int, char));
-char				*ft_strsub(char const *s, unsigned int start, size_t len);
+char				*createNewStrByFuncI(char const *oldStrPtr, char
+		(*func)(unsigned int, char));
+char				*ft_strsub(char const *s,unsigned int start, size_t len);
 char				*joinTwoStrings(char const *string1Ptr, char const *string2Ptr);
 char				*itoa(int nbr);
 char				*duplicateString(const char *stringPtr);

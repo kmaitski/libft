@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   areStrsEquBytes.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 18:11:18 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 17:08:49 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/06/25 21:03:16 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,29 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_strnequ
- *  Description:  Lexicographical comparison between s1 and s2 up to n characters
- *  			  or until a ’\0’ is reached. If the 2 strings are identical, the
- *  			  function returns 1, or 0 otherwise.
- * =====================================================================================
+ *         Name:  areStrsEquBytes
+ *  Description:  Lexicographical comparison between  the strings pointed to by
+ *  			  str1Ptr and str2Ptr up to nbrOfBytes or until a ’\0’ is
+ *  			  reached. If the 2 strings are identical, the function returns
+ *  			  1, or 0 otherwise.
+ * =============================================================================
  */
-int	ft_strnequ(char const *s1, char const *s2, size_t n)
+int	areStrsEquBytes(char const *str1Ptr, char const *str2Ptr, size_t nbrOfBytes)
 {
-	unsigned int	i;
+	size_t	i = 0;
 
-	i = 0;
-	if (!s1 || !s2)
+	if (!str1Ptr || !str2Ptr) {
 		return (0);
-	if (n == 0)
+	}
+	if (!nbrOfBytes) {
 		return (1);
-	while (s1[i] == s2[i])
+	}
+	while (str1Ptr[i] == str2Ptr[i])
 	{
-		if ((!s1[i] && !s2[i]) || i == n - 1)
+		if ((!str1Ptr[i] && !str2Ptr[i]) || i == nbrOfBytes - 1) {
 			return (1);
+		}
 		i++;
 	}
 	return (0);
-} 		/* -----  end of function ft_strnequ  ----- */
+} 		/* -----  end of function areStrsEquBytes  ----- */

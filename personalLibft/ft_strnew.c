@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 13:58:48 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/26 17:07:39 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/06/25 21:13:31 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,22 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_strnew
- *  Description:  Allocates and returns a “fresh” string ending with ’\0’. Each 
- *  			  character of the string is initialized at ’\0’. If the 
- *  			  allocation fails the function returns NULL.
- * =====================================================================================
+ *         Name:  createNewString
+ *  Description:  Allocates and returns a “fresh” string of ’\0’ characters. If
+ *  			  the allocation fails the function returns NULL.
+ * =============================================================================
  */
-char	*ft_strnew(size_t size)
+char	*createNewString(size_t sizeOfString)
 {
-	char	*fresh;
-	size_t	i;
+	char	*strPtr = NULL;
+	size_t	i = 0;
 
-	if (!(fresh = (char *)malloc(size + 1)))
+	if (!(strPtr = (char *)malloc(sizeof(*strPtr) * sizeOfString + 1))) {
 		return (NULL);
-	i = -1;
-	while (++i <= size)
-		fresh[i] = '\0';
-	return (fresh);
-}	  /* -----  end of function ft_strnew  ----- */
+	}
+	while (i <= sizeOfString) {
+		strPtr[i++] = '\0';
+	}
+	return (strPtr);
+}	  /* -----  end of function createNewString  ----- */
 

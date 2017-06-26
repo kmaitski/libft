@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/02 12:47:55 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/04/20 19:22:11 by kmaitski         ###   ########.fr       */
+/*   Created: 2017/02/02 13:34:23 by kmaitski          #+#    #+#             */
+/*   Updated: 2017/06/25 20:25:34 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,21 @@
 
 /* 
  * ===  FUNCTION  ==============================================================
- *         Name:  ft_strncpy
- *  Description:  Copies up to n characters from the string pointed to by src to
- *  			  dest. In a case where the length of src is less than that of
- *  			  n, the remainder of dest will be padded with null bytes.
+ *         Name:  strCmpBytes
+ *  Description:  Compares at most the first nbrOfBytes of the strings pointed
+ *  			  to by str1Ptr and str2Ptr.
  * =============================================================================
  */
-char	*ft_strncpy(char *dest, const char *src, size_t n)
+int	strCmpBytes(const char *str1Ptr, const char *str2Ptr, size_t nbrOfBytes)
 {
-	size_t	c;
+	int	i;
 
-	c = -1;
-	while (src[++c] && c < n)
-		dest[c] = src[c];
-	while (c < n)
-		dest[c++] = '\0';
-	return (dest);
-}		/* -----  end of function ft_strncpy  ----- */
+	i = -1;
+	while ((size_t)++i < nbrOfBytes && (size_t)i <= getStringLength(str1Ptr) && (size_t)i <= getStringLength(str2Ptr)) {
+		if (str1Ptr[i] != str2Ptr[i]) {
+			return ((unsigned char)str1Ptr[i] - (unsigned char)str2Ptr[i]);
+		}
+	}
+	i--;
+	return ((unsigned char)str1Ptr[i] - (unsigned char)str2Ptr[i]);
+}		/* -----  end of function stringCmpBytes  ----- */
