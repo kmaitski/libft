@@ -6,7 +6,7 @@
 #    By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/14 17:38:29 by kmaitski          #+#    #+#              #
-#    Updated: 2017/06/25 21:13:55 by kmaitski         ###   ########.fr        #
+#    Updated: 2017/06/27 13:47:30 by kmaitski         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRC = printCharacter.c printString.c getStringLength.c stringCompare.c clearStri
       areStringsEquBytes.c ft_strsub.c joinTwoStrings.c ft_strtrim.c ft_strsplit.c itoa.c printNumber.c\
       writeStringWithNewLineToFd.c writeCharacterToFileDescriptor.c writeStringToFileDescriptor.c writeNumberToFileDescriptor.c writeStringWithNewLineToFd.c writeNumberToFileDescriptor.c\
 	  memorySet.c bZero.c memoryCopy.c memoryCopyCharacter.c memoryMove.c memoryCharacterCheck.c memoryCompare.c\
-	 duplicateString.c ft_strnstr.c stringCopy.c strCpyBytes.c searchStringForCharacter.c appendString.c appendStringBytes.c\
+	 duplicateString.c isSubstrInStrBytes.c stringCopy.c strCpyBytes.c searchStringForCharacter.c appendString.c appendStringBytes.c\
 	  ft_strlcat.c ft_strchr.c ft_strstr.c strCmpBytes.c atoi.c isAlpha.c isDigit.c\
       isAlNum.c isAscii.c isPrint.c ft_toupper.c ft_tolower.c createNewNode.c\
       lstDelOne.c lstDel.c lstAdd.c lstIter.c changeList.c lstAddBack.c\

@@ -66,7 +66,7 @@ void				applyFunctionToString(char *stringPtr, void (*f)(char *));
 void				applyFunctionToStringAndIndex(char *stringPtr, void
 		(*f)(unsigned int, char *));
 char				*ft_strstr(const char *haystack, const char *needle);
-char				*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char				*isSubstrInStrBytes(const char *strPtr, const char *substrPtr, size_t nbrOfBytes);
 size_t				getStringLength(char const *stringPtr);
 char				*stringCopy(char *destinationStringPtr, const char
 		*sourceStringPtr);
