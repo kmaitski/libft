@@ -6,27 +6,27 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 17:45:05 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/21 22:15:01 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/07/19 21:20:12 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+void	ft_lstadd(t_list **alst, t_list *new_node)
 {
 	t_list	*old_head;
 
-	if (!new)
+	if (!new_node)
 		return ;
 	old_head = *alst;
 	if (!alst)
 	{
-		*alst = new;
-		new->next = NULL;
+		*alst = new_node;
+		new_node->next = NULL;
 	}
 	else
 	{
-		*alst = new;
-		new->next = old_head;
+		*alst = new_node;
+		new_node->next = old_head;
 	}
 }

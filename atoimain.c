@@ -28,7 +28,7 @@
  */
 int	main(void)
 {
-	const char *str = "9223372036854775809";
+	const char *str = "945";
 //	const char *str = ("-2147483648");
 	printf("The atoi result is: %d\n", atoi(str));
 	printf("You atoi result is: %d\n", ft_atoi(str));

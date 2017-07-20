@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 16:41:00 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/06/06 21:15:44 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/07/19 21:49:46 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char				*ft_strrchr(const char *str, int c);
 char				*ft_strcat(char *dest, const char *src);
 char				*ft_strncat(char *dest, const char *src, size_t n);
 size_t				ft_strlcat(char *dest, const char *src, size_t n);
-int					ft_atoi(const char *str);
+int					ft_atoi(const char *string_ptr);
 char				*ft_search_and_replace(char *str, char i, char j);
 char				*ft_ulstr(char *str);
 char				*ft_first_word(char *str);
@@ -117,7 +117,7 @@ t_list				*ft_lstlast(t_list *head_node);
 unsigned int		ft_lstsize(t_list *head_node);
 t_list				*ft_lstn(t_list *head_node, size_t n);
 
-void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstadd(t_list **alst, t_list *new_node);
 void				ft_lstaddback(t_list **list, t_list *new_node);
 void				ft_lstaddn(t_list **list, t_list *new_node, void *content);
 

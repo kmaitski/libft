@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 10:14:48 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/05/22 23:00:37 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/07/19 17:14:58 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int			*intialize_hex_array(void)
 		i++;
 	}
 	while (i < 16)
-		hex_array[i++] = c++;
+		hex_array[i++] = hex_letters++;
 	return_array = hex_array;
 	return (return_array);
 }

@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 09:25:56 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/06/07 22:32:16 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/07/19 21:34:13 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,10 @@ unsigned char	*wchartoutf8fd(wchar_t c)
 		buffer[0] = c | 0xC0;
 	}
 	else
+	{
+		free(buffer);
 		buffer = threeand4bytesbufferfd(c);
+	}
 	return (buffer);
 }
 
