@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 16:41:00 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/07/19 21:49:46 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/07/19 23:25:40 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ int					ft_max(int *tab, unsigned int len);
 int					ft_do_op(int number1, char sign, int number2);
 int					ft_pgcd(unsigned int nbr1, unsigned int nbr2);
 int					*ft_range(int start, int end);
-void				sortinttab(int *tab, unsigned int size);
+void				ft_sortinttab(int *tab, unsigned int size);
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
