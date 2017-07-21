@@ -6,7 +6,7 @@
 /*   By: kmaitski <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 13:36:13 by kmaitski          #+#    #+#             */
-/*   Updated: 2017/07/19 21:11:15 by kmaitski         ###   ########.fr       */
+/*   Updated: 2017/07/20 19:23:48 by kmaitski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,26 +46,26 @@ static int	overflow(const char *string_ptr)
  **/
 int			ft_atoi(const char *string_ptr)
 {
-	unsigned int	result;
-	int				is_negative;
-	int				too_big;
+	int	result;
+	int				negative_flag;
+	int				too_big_flag;
 
 	result = 0;
-	is_negative = 1;
+	negative_flag = 1;
 	while (*string_ptr > 0 && *string_ptr < 33 && *string_ptr != '\e')
 		string_ptr++;
 	if (*string_ptr == '-')
-		is_negative = -1;
+		negative_flag = -1;
 	if (*string_ptr == '-' || *string_ptr == '+')
 		string_ptr++;
-	too_big = overflow(string_ptr);
-	if (too_big && is_negative == 1)
+	too_big_flag = overflow(string_ptr);
+	if (too_big_flag && negative_flag == 1)
 		return (-1);
-	if (too_big  && is_negative == -1)
+	if (too_big_flag  && negative_flag == -1)
 		return (0);
 	while (*string_ptr >= '0' && *string_ptr <= '9')
 		result = result * 10 + *string_ptr++ - '0';
-	if (result == 2147483648 && is_negative == -1)
+	if (result == 2147483648 && negative_flag == -1)
 		return (-2147483648);
-	return ((int)result * is_negative);
+	return (result * negative_flag);
 }
